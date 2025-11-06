@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+
+// Sample jobs data - in production, this would come from a CMS or API
+const jobs = [
+  {
+    id: 1,
+    title: 'Senior Software Engineer',
+    company: 'TechCorp India',
+    location: 'Bangalore',
+    type: 'Full-time',
+    salary: '₹15-25 LPA',
+    description: 'We are looking for an experienced software engineer to join our growing team.',
+    skills: ['React', 'Node.js', 'TypeScript', 'AWS'],
+  },
+  {
+    id: 2,
+    title: 'DevOps Engineer',
+    company: 'Cloud Solutions',
+    location: 'Hyderabad',
+    type: 'Full-time',
+    salary: '₹12-20 LPA',
+    description: 'Join our DevOps team and help build scalable infrastructure solutions.',
+    skills: ['Docker', 'Kubernetes', 'CI/CD', 'AWS'],
+  },
+  {
+    id: 3,
+    title: 'Data Scientist',
+    company: 'Analytics Pro',
+    location: 'Mumbai',
+    type: 'Full-time',
+    salary: '₹18-30 LPA',
+    description: 'Looking for a data scientist to work on cutting-edge ML projects.',
+    skills: ['Python', 'Machine Learning', 'TensorFlow', 'SQL'],
+  },
+  {
+    id: 4,
+    title: 'Frontend Developer',
+    company: 'Digital Agency',
+    location: 'Pune',
+    type: 'Contract',
+    salary: '₹8-15 LPA',
+    description: 'Contract position for a skilled frontend developer with React experience.',
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'],
+  },
+  {
+    id: 5,
+    title: 'Backend Developer',
+    company: 'StartupXYZ',
+    location: 'Bangalore',
+    type: 'Full-time',
+    salary: '₹10-18 LPA',
+    description: 'Backend developer needed for a fast-growing startup.',
+    skills: ['Node.js', 'PostgreSQL', 'REST APIs', 'Microservices'],
+  },
+  {
+    id: 6,
+    title: 'Full Stack Developer',
+    company: 'Innovation Labs',
+    location: 'Chennai',
+    type: 'Full-time',
+    salary: '₹12-22 LPA',
+    description: 'Full stack developer to work on end-to-end product development.',
+    skills: ['React', 'Node.js', 'MongoDB', 'GraphQL'],
+  },
+];
+---
+
+<BaseLayout title="Job Openings - A2Z Staffing Solutions">
+  <Hero
+    title="Find Your Next Opportunity"
+    subtitle="Browse our latest job openings and take the next step in your career"
+    primaryCTA={{ text: "Apply Now", href: "#jobs" }}
+    background="gradient"
+  />
+
+  <Section id="jobs">
+    <div class="container mx-auto px-4">
+      <!-- Search and Filters -->
+      <div class="mb-8">
+        <Card class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label for="search" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Search Jobs
+              </label>
+              <input
+                type="text"
+                id="search"
+                placeholder="Job title, skills, or company..."
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label for="location" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Location
+              </label>
+              <select
+                id="location"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              >
+                <option value="">All Locations</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="pune">Pune</option>
+                <option value="chennai">Chennai</option>
+              </select>
+            </div>
+            <div>
+              <label for="type" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Job Type
+              </label>
+              <select
+                id="type"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              >
+                <option value="">All Types</option>
+                <option value="full-time">Full-time</option>
+                <option value="contract">Contract</option>
+                <option value="part-time">Part-time</option>
+              </select>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <!-- Job Listings -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          {jobs.length} Open Positions
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          Find the perfect role that matches your skills and career goals
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6">
+        {jobs.map((job) => (
+          <Card class="hover:shadow-xl transition-all">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div class="flex-1">
+                <div class="flex items-start gap-4 mb-3">
+                  <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span class="text-2xl">💼</span>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-1 text-gray-900 dark:text-white">
+                      {job.title}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">
+                      {job.company} • {job.location}
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                        {job.type}
+                      </span>
+                      <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                        {job.salary}
+                      </span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-3">
+                      {job.description}
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      {job.skills.map((skill) => (
+                        <span class="px-2 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-3 md:flex-col">
+                <Button href={`/jobs/${job.id}`} variant="outline" size="sm" class="w-full md:w-auto">
+                  View Details
+                </Button>
+                <Button href={`/jobs/${job.id}/apply`} variant="primary" size="sm" class="w-full md:w-auto">
+                  Apply Now
+                </Button>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <Card class="bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 dark:from-indigo-700 dark:via-purple-700 dark:to-cyan-600 text-white border-0">
+          <h3 class="text-2xl font-bold mb-3">Don't See a Match?</h3>
+          <p class="mb-6 text-white/90">
+            Submit your resume and we'll notify you when a suitable position opens up
+          </p>
+          <Button href="/candidates" variant="primary" size="lg" class="bg-white text-indigo-600 hover:bg-gray-100">
+            Submit Resume
+          </Button>
+        </Card>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
+

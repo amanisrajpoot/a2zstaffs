@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="For Candidates - A2Z Staffing Solutions">
+  <Hero
+    title="Your Career Journey Starts Here"
+    subtitle="We connect talented professionals with amazing opportunities"
+    primaryCTA={{ text: "Browse Jobs", href: "/jobs" }}
+    secondaryCTA={{ text: "Submit Resume", href: "#apply" }}
+    background="gradient"
+  />
+
+  <!-- Why Choose Us -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Why Choose Us
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          We're committed to your success
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <Card class="text-center">
+          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+            <Icon name="target" class="w-10 h-10" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Perfect Match</h3>
+          <p class="text-gray-600 dark:text-gray-300">We understand your skills, goals, and preferences to find the perfect role for you.</p>
+        </Card>
+        <Card class="text-center">
+          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+            <Icon name="handshake" class="w-10 h-10" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Personal Support</h3>
+          <p class="text-gray-600 dark:text-gray-300">Our team provides personalized guidance throughout your job search journey.</p>
+        </Card>
+        <Card class="text-center">
+          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+            <Icon name="chart" class="w-10 h-10" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Career Growth</h3>
+          <p class="text-gray-600 dark:text-gray-300">We help you find opportunities that align with your long-term career goals.</p>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <!-- How It Works -->
+  <Section background="secondary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          How It Works
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Simple steps to your next opportunity
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {[
+          { step: '1', title: 'Submit Resume', desc: 'Upload your resume and tell us about your preferences' },
+          { step: '2', title: 'We Review', desc: 'Our team reviews your profile and matches you with opportunities' },
+          { step: '3', title: 'Interview Prep', desc: 'We help you prepare for interviews and provide feedback' },
+          { step: '4', title: 'Get Placed', desc: 'Land your dream job and start your new career journey' },
+        ].map(({ step, title, desc }) => (
+          <div class="text-center">
+            <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{step}</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Benefits -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Benefits of Working With Us
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {[
+          'Access to exclusive job opportunities',
+          'Free career counseling and guidance',
+          'Interview preparation and tips',
+          'Salary negotiation support',
+          'Long-term career planning',
+          'Regular updates on new openings',
+        ].map((benefit) => (
+          <Card>
+            <div class="flex items-center gap-3">
+              <Icon name="check" class="w-5 h-5 text-green-500" />
+              <p class="text-gray-700 dark:text-gray-300 font-medium">{benefit}</p>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Application Form -->
+  <Section background="secondary" id="apply">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+            Submit Your Resume
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Let us know about you and we'll find the perfect opportunity
+          </p>
+        </div>
+        <Card>
+            <form name="candidate-application" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" enctype="multipart/form-data" class="space-y-6">
+            <input type="hidden" name="form-name" value="candidate-application" />
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  First Name *
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  Last Name *
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="experience" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Years of Experience *
+              </label>
+              <select
+                id="experience"
+                name="experience"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              >
+                <option value="">Select experience</option>
+                <option value="0-1">0-1 years</option>
+                <option value="2-5">2-5 years</option>
+                <option value="6-10">6-10 years</option>
+                <option value="10+">10+ years</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="skills" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Key Skills *
+              </label>
+              <input
+                type="text"
+                id="skills"
+                name="skills"
+                required
+                placeholder="e.g., React, Node.js, Python, AWS"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="resume" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Upload Resume *
+              </label>
+              <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf,.doc,.docx"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+              />
+            </div>
+
+            <div>
+              <label for="coverLetter" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Cover Letter (Optional)
+              </label>
+              <textarea
+                id="coverLetter"
+                name="coverLetter"
+                rows="4"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+                placeholder="Tell us why you're interested in working with us..."
+              ></textarea>
+            </div>
+
+            <Button type="submit" variant="primary" size="lg" class="w-full">
+              Submit Application
+            </Button>
+          </form>
+        </Card>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
+

@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import StatCard from '../components/StatCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout title="A2Z Staffing Solutions - Connecting Businesses with Top Talent">
+  <!-- Hero Section -->
+  <Hero
+    title="One Stop Solution for All Your Staffing Requirements"
+    subtitle="Connecting businesses with top talent and empowering individuals to find meaningful employment opportunities."
+    primaryCTA={{ text: "Find Talent", href: "/clients" }}
+    secondaryCTA={{ text: "Apply Now", href: "/jobs" }}
+  />
+
+  <!-- Services Section -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Our Services
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Comprehensive staffing solutions tailored to your business needs
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard
+          title="IT Staffing"
+          description="Specialized IT talent placement for software development, cloud computing, cybersecurity, and technology roles. We connect you with skilled professionals who drive innovation."
+          icon="computer"
+        />
+        <ServiceCard
+          title="Permanent Placement"
+          description="Long-term staffing solutions with comprehensive screening and matching. We ensure the perfect fit for both employers and candidates."
+          icon="briefcase"
+        />
+        <ServiceCard
+          title="Contract Staffing"
+          description="Flexible contract and temporary staffing solutions for projects. Scale your team up or down based on your project requirements."
+          icon="document"
+        />
+        <ServiceCard
+          title="Executive Search"
+          description="C-level and senior executive placements. We help you find leaders who can transform your organization."
+          icon="target"
+        />
+        <ServiceCard
+          title="Recruitment Process Outsourcing"
+          description="End-to-end recruitment solutions. Let us handle your entire hiring process while you focus on your core business."
+          icon="rocket"
+        />
+        <ServiceCard
+          title="Talent Consulting"
+          description="Strategic talent consulting services. We help you build effective hiring strategies and optimize your workforce."
+          icon="lightbulb"
+        />
+      </div>
+    </div>
+  </Section>
+
+  <!-- Stats Section -->
+  <Section background="secondary">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <StatCard
+          number="500+"
+          label="Candidates Placed"
+          icon="users"
+        />
+        <StatCard
+          number="200+"
+          label="Happy Clients"
+          icon="building"
+        />
+        <StatCard
+          number="15+"
+          label="Years Experience"
+          icon="star"
+        />
+        <StatCard
+          number="50+"
+          label="Industries Served"
+          icon="globe"
+        />
+      </div>
+    </div>
+  </Section>
+
+  <!-- How It Works Section -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          How It Works
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Simple, efficient, and effective process
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">1</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">For Candidates</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Submit your application and resume</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">We match you with suitable opportunities</p>
+          <p class="text-gray-600 dark:text-gray-300">Interview and get placed</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">2</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">For Clients</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Submit your talent requirements</p>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">We source and screen candidates</p>
+          <p class="text-gray-600 dark:text-gray-300">Interview and hire the best fit</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Testimonials Section -->
+  <Section background="secondary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          What Our Clients Say
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Trusted by businesses and professionals across industries
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <TestimonialCard
+          name="Rajesh Kumar"
+          role="CTO"
+          company="TechCorp India"
+          content="A2Z Staffing Solutions helped us find exceptional IT talent. Their understanding of our requirements and the quality of candidates they provided exceeded our expectations."
+          rating={5}
+        />
+        <TestimonialCard
+          name="Priya Sharma"
+          role="HR Director"
+          company="Global Solutions"
+          content="The team at A2Z is professional, responsive, and truly understands the staffing needs of modern businesses. They've become our trusted recruitment partner."
+          rating={5}
+        />
+        <TestimonialCard
+          name="Amit Patel"
+          role="Software Engineer"
+          content="I found my dream job through A2Z Staffing. The team was supportive throughout the process and helped me land a position at a great company."
+          rating={5}
+        />
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA Section -->
+  <Section background="gradient">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        Ready to Get Started?
+      </h2>
+      <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+        Whether you're looking for talent or your next opportunity, we're here to help.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/clients" variant="primary" size="lg" class="bg-white text-indigo-600 hover:bg-gray-100">
+          Request Talent
+        </Button>
+        <Button href="/jobs" variant="outline" size="lg" class="border-white text-white hover:bg-white/10">
+          Browse Jobs
+        </Button>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

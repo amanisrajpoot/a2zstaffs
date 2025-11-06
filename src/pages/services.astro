@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout title="Our Services - A2Z Staffing Solutions">
+  <Hero
+    title="Comprehensive Staffing Solutions"
+    subtitle="Tailored services to meet all your staffing needs"
+    background="gradient"
+  />
+
+  <!-- Services Grid -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Our Services
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          From IT staffing to executive search, we offer comprehensive solutions
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard
+          title="IT Staffing"
+          description="Specialized IT talent placement for software development, cloud computing, cybersecurity, data science, DevOps, and all technology roles. We connect you with skilled professionals who drive innovation and digital transformation."
+          icon="computer"
+        />
+        <ServiceCard
+          title="Permanent Placement"
+          description="Long-term staffing solutions with comprehensive screening and matching. We ensure the perfect fit for both employers and candidates, focusing on cultural alignment and long-term success."
+          icon="briefcase"
+        />
+        <ServiceCard
+          title="Contract Staffing"
+          description="Flexible contract and temporary staffing solutions for projects. Scale your team up or down based on your project requirements without the overhead of permanent hires."
+          icon="document"
+        />
+        <ServiceCard
+          title="Executive Search"
+          description="C-level and senior executive placements. We help you find leaders who can transform your organization and drive strategic growth."
+          icon="target"
+        />
+        <ServiceCard
+          title="Recruitment Process Outsourcing"
+          description="End-to-end recruitment solutions. Let us handle your entire hiring process while you focus on your core business. We manage everything from sourcing to onboarding."
+          icon="rocket"
+        />
+        <ServiceCard
+          title="Talent Consulting"
+          description="Strategic talent consulting services. We help you build effective hiring strategies, optimize your workforce, and develop talent acquisition best practices."
+          icon="lightbulb"
+        />
+      </div>
+    </div>
+  </Section>
+
+  <!-- Industries Served -->
+  <Section background="secondary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Industries We Serve
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          We have experience across diverse industries
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Retail', 'Education', 'Consulting', 'E-commerce', 'Telecommunications', 'Energy', 'Automotive', 'Pharmaceuticals'].map((industry) => (
+          <Card class="text-center">
+            <div class="font-semibold text-gray-900 dark:text-white">{industry}</div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Process -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          How We Work
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          A proven process that delivers results
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {[
+          { step: '1', title: 'Consultation', desc: 'We understand your requirements and company culture' },
+          { step: '2', title: 'Sourcing', desc: 'We tap into our network and use advanced sourcing techniques' },
+          { step: '3', title: 'Screening', desc: 'Thorough screening including technical and cultural fit assessment' },
+          { step: '4', title: 'Placement', desc: 'We facilitate interviews and help you make the right hire' },
+        ].map(({ step, title, desc }) => (
+          <div class="text-center">
+            <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{step}</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section background="gradient">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        Ready to Get Started?
+      </h2>
+      <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+        Let's discuss how we can help with your staffing needs
+      </p>
+      <Button href="/contact" variant="primary" size="lg" class="bg-white text-indigo-600 hover:bg-gray-100">
+        Contact Us Today
+      </Button>
+    </div>
+  </Section>
+</BaseLayout>
+

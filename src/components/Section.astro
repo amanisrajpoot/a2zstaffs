@@ -1,0 +1,22 @@
+---
+interface Props {
+  class?: string;
+  background?: 'default' | 'secondary' | 'gradient';
+}
+
+const {
+  class: className = '',
+  background = 'default',
+} = Astro.props;
+
+const backgroundClasses = {
+  default: 'bg-white dark:bg-slate-900',
+  secondary: 'bg-gray-50 dark:bg-slate-800',
+  gradient: 'bg-gradient-to-br from-blue-600 to-sky-500 dark:from-blue-800 dark:to-sky-700',
+};
+---
+
+<section class={`section ${backgroundClasses[background]} ${className}`}>
+  <slot />
+</section>
+

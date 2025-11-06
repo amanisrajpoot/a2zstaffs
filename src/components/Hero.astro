@@ -1,0 +1,54 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  primaryCTA?: { text: string; href: string };
+  secondaryCTA?: { text: string; href: string };
+  background?: 'default' | 'gradient';
+}
+
+const {
+  title,
+  subtitle,
+  primaryCTA,
+  secondaryCTA,
+  background = 'gradient',
+} = Astro.props;
+
+const backgroundClasses = {
+  default: 'bg-white dark:bg-slate-900',
+  secondary: 'bg-gray-50 dark:bg-slate-800',
+  gradient: 'bg-gradient-to-br from-indigo-600 via-purple-600 to-cyan-500 dark:from-indigo-700 dark:via-purple-700 dark:to-cyan-600 text-white',
+};
+---
+
+<section class={`section ${backgroundClasses[background]} ${background === 'gradient' ? 'text-white' : ''}`}>
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center animate-fade-in">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      )}
+      {(primaryCTA || secondaryCTA) && (
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {primaryCTA && (
+            <Button href={primaryCTA.href} variant="primary" size="lg" class={background === 'gradient' ? 'bg-white text-indigo-600 hover:bg-gray-100' : ''}>
+              {primaryCTA.text}
+            </Button>
+          )}
+          {secondaryCTA && (
+            <Button href={secondaryCTA.href} variant={background === 'gradient' ? 'outline' : 'secondary'} size="lg" class={background === 'gradient' ? 'border-white text-white hover:bg-white/10' : ''}>
+              {secondaryCTA.text}
+            </Button>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

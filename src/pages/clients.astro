@@ -1,0 +1,270 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="For Clients - A2Z Staffing Solutions">
+  <Hero
+    title="Find the Talent You Need"
+    subtitle="We help businesses build exceptional teams with the right people"
+    primaryCTA={{ text: "Request Talent", href: "#request" }}
+    secondaryCTA={{ text: "Learn More", href: "#services" }}
+    background="gradient"
+  />
+
+  <!-- Why Choose Us -->
+  <Section id="services">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Why Choose Us
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          We deliver results that matter
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <Card class="text-center">
+          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+            <Icon name="bolt" class="w-10 h-10" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Fast Turnaround</h3>
+          <p class="text-gray-600 dark:text-gray-300">We understand time is critical. Our streamlined process ensures quick placements without compromising quality.</p>
+        </Card>
+        <Card class="text-center">
+          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+            <Icon name="target" class="w-10 h-10" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Quality Matches</h3>
+          <p class="text-gray-600 dark:text-gray-300">Thorough screening ensures candidates match not just skills, but also culture and values.</p>
+        </Card>
+        <Card class="text-center">
+          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+            <Icon name="handshake" class="w-10 h-10" />
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Partnership</h3>
+          <p class="text-gray-600 dark:text-gray-300">We build lasting relationships and support you beyond just placement.</p>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Our Process -->
+  <Section background="secondary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          How We Work
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          A proven process that delivers results
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {[
+          { step: '1', title: 'Consultation', desc: 'We understand your requirements, company culture, and team dynamics' },
+          { step: '2', title: 'Sourcing', desc: 'We tap into our extensive network and use advanced sourcing techniques' },
+          { step: '3', title: 'Screening', desc: 'Thorough screening including technical assessment and cultural fit evaluation' },
+          { step: '4', title: 'Placement', desc: 'We facilitate interviews and help you make the right hiring decision' },
+        ].map(({ step, title, desc }) => (
+          <div class="text-center">
+            <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{step}</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Services for Clients -->
+  <Section>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Services for Clients
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {[
+          'IT Staffing & Recruitment',
+          'Permanent Placement Services',
+          'Contract & Temporary Staffing',
+          'Executive Search',
+          'Recruitment Process Outsourcing (RPO)',
+          'Talent Consulting & Strategy',
+        ].map((service) => (
+          <Card>
+            <div class="flex items-center gap-3">
+              <Icon name="check" class="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <p class="text-gray-700 dark:text-gray-300 font-medium">{service}</p>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Request Talent Form -->
+  <Section background="secondary" id="request">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+            Request Talent
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300">
+            Tell us about your requirements and we'll find the perfect candidates
+          </p>
+        </div>
+        <Card>
+            <form name="talent-request" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="space-y-6">
+            <input type="hidden" name="form-name" value="talent-request" />
+            
+            <div>
+              <label for="companyName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Company Name *
+              </label>
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="contactName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  Contact Name *
+                </label>
+                <input
+                  type="text"
+                  id="contactName"
+                  name="contactName"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label for="contactEmail" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  name="contactEmail"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="jobTitle" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Job Title / Position *
+              </label>
+              <input
+                type="text"
+                id="jobTitle"
+                name="jobTitle"
+                required
+                placeholder="e.g., Senior Software Engineer"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="jobType" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Job Type *
+              </label>
+              <select
+                id="jobType"
+                name="jobType"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              >
+                <option value="">Select job type</option>
+                <option value="full-time">Full-time</option>
+                <option value="contract">Contract</option>
+                <option value="part-time">Part-time</option>
+                <option value="temporary">Temporary</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="requiredSkills" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Required Skills *
+              </label>
+              <input
+                type="text"
+                id="requiredSkills"
+                name="requiredSkills"
+                required
+                placeholder="e.g., React, Node.js, AWS, 5+ years experience"
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="timeline" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Timeline / Urgency *
+              </label>
+              <select
+                id="timeline"
+                name="timeline"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              >
+                <option value="">Select timeline</option>
+                <option value="immediate">Immediate (1-2 weeks)</option>
+                <option value="urgent">Urgent (2-4 weeks)</option>
+                <option value="normal">Normal (1-2 months)</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="requirements" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                Additional Requirements *
+              </label>
+              <textarea
+                id="requirements"
+                name="requirements"
+                rows="5"
+                required
+                placeholder="Describe the role, responsibilities, company culture, and any other relevant details..."
+                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+              ></textarea>
+            </div>
+
+            <Button type="submit" variant="primary" size="lg" class="w-full">
+              Submit Request
+            </Button>
+          </form>
+        </Card>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
+
