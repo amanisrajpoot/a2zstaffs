@@ -4,31 +4,32 @@ import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import Card from '../components/Card.astro';
 import Icon from '../components/Icon.astro';
+import Button from '../components/Button.astro';
 ---
 
-<BaseLayout title="About Us - A2Z Staffing Solutions">
+<BaseLayout title="About — A2Z Digital Workforce">
   <Hero
-    title="About A2Z Staffing Solutions"
-    subtitle="Connecting talent with opportunity, one placement at a time"
+    title="The people and principles behind A2Z Digital Workforce"
+    subtitle="We blend technology, BPM, and talent expertise into one operating model—helping enterprises scale faster while people grow in meaningful careers."
     background="gradient"
   />
 
   <!-- Our Story -->
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-          Our Story
+    <div class="container">
+      <div class="mx-auto max-w-4xl space-y-6">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          From a staffing boutique to a digital operations partner
         </h2>
-        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
+        <div class="space-y-5 text-lg text-[var(--text-muted)]">
           <p>
-            Founded with a vision to bridge the gap between employers and job seekers, A2Z Staffing Solutions has grown to become a trusted name in the staffing industry. Over the past 15+ years, we have successfully placed hundreds of professionals across various industries.
+            Established in 2007, A2Z began as a specialist staffing agency helping technology companies hire faster. As our clients expanded, so did their need for integrated delivery partners who could stand up engineering pods, customer experience desks, and niche talent programs under one roof.
           </p>
           <p>
-            What started as a small recruitment agency has evolved into a comprehensive staffing solutions provider, serving clients from startups to Fortune 500 companies. Our commitment to excellence, personalized service, and deep understanding of the job market has made us the preferred choice for both employers seeking top talent and professionals looking for their next opportunity.
+            Today, A2Z Digital Workforce operates as a full-stack partner spanning digital product engineering, BPM and CX operations, and strategic staffing. Our teams work from delivery hubs across India—backed by playbooks, accelerators, and governance frameworks that keep outcomes measurable.
           </p>
           <p>
-            At A2Z Staffing Solutions, we believe that the right person in the right role can transform an organization. That's why we go beyond just matching resumes to job descriptions – we understand company culture, team dynamics, and long-term goals to ensure the perfect fit.
+            We believe that sustainable growth happens when business goals, human potential, and technology innovation move in sync. Every engagement we take on is rooted in that belief.
           </p>
         </div>
       </div>
@@ -37,105 +38,138 @@ import Icon from '../components/Icon.astro';
 
   <!-- Mission & Vision -->
   <Section background="secondary">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <div class="container">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <Card>
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400">
+          <div class="mb-4 text-[var(--primary)]">
             <Icon name="target" class="w-10 h-10" />
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Our Mission</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            To connect exceptional talent with outstanding opportunities, creating value for both businesses and professionals. We strive to be the most trusted staffing partner by delivering personalized, efficient, and effective recruitment solutions.
+          <h3 class="text-2xl font-semibold mb-4 text-[var(--text-secondary)] dark:text-white">Our Mission</h3>
+          <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+            To engineer integrated IT, BPO, and staffing solutions that accelerate our clients’ strategies while creating purposeful growth paths for every professional we engage.
           </p>
         </Card>
         <Card>
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400">
+          <div class="mb-4 text-[var(--primary)]">
             <Icon name="globe" class="w-10 h-10" />
           </div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Our Vision</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            To become the leading staffing solutions provider in India, recognized for our innovation, integrity, and impact. We envision a future where every professional finds their ideal role and every business finds its perfect team.
+          <h3 class="text-2xl font-semibold mb-4 text-[var(--text-secondary)] dark:text-white">Our Vision</h3>
+          <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+            To be the most trusted digital workforce partner for global enterprises—known for our ability to harmonize talent, process, and technology to deliver measurable impact.
           </p>
         </Card>
       </div>
     </div>
   </Section>
 
-  <!-- Our Values -->
+  <!-- Leadership Principles -->
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Our Values
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Leadership principles that shape how we work
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          The principles that guide everything we do
+        <p class="mt-4 text-lg text-[var(--text-muted)]">
+          These principles power our delivery culture across engineering floors, CX pods, and recruitment war rooms.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="handshake" class="w-8 h-8" />
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Integrity</h3>
-          <p class="text-gray-600 dark:text-gray-300">We conduct business with honesty, transparency, and ethical practices.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="target" class="w-8 h-8" />
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Excellence</h3>
-          <p class="text-gray-600 dark:text-gray-300">We strive for excellence in every interaction and placement.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="lightbulb" class="w-8 h-8" />
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Innovation</h3>
-          <p class="text-gray-600 dark:text-gray-300">We continuously improve our processes and embrace new technologies.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="heart" class="w-8 h-8" />
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Care</h3>
-          <p class="text-gray-600 dark:text-gray-300">We genuinely care about the success of our clients and candidates.</p>
-        </Card>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          { icon: 'handshake', title: 'Partnership first', desc: 'We co-own outcomes, embed with your teams, and stay accountable for long-term success.' },
+          { icon: 'lightbulb', title: 'Innovate pragmatically', desc: 'Automation, analytics, and AI are always anchored to measurable business value.' },
+          { icon: 'target', title: 'Bias for impact', desc: 'Every engagement starts with clear KPIs, frequent governance, and continuous improvement loops.' },
+          { icon: 'heart', title: 'Elevate people', desc: 'We invest in learning pathways, DEI initiatives, and communities that help talent thrive.' },
+        ].map(({ icon, title, desc }) => (
+          <Card class="text-center">
+            <div class="mb-4 flex justify-center text-[var(--primary)]">
+              <Icon name={icon} class="w-8 h-8" />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">{desc}</p>
+          </Card>
+        ))}
       </div>
     </div>
   </Section>
 
   <!-- Why Choose Us -->
   <Section background="secondary">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Why Choose Us
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)] dark:text-white">
+          Why leading enterprises choose A2Z
         </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="bolt" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Fast Turnaround</h3>
-          <p class="text-gray-600 dark:text-gray-300">We understand time is critical. Our streamlined process ensures quick placements without compromising quality.</p>
-        </div>
-        <div class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="target" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Precise Matching</h3>
-          <p class="text-gray-600 dark:text-gray-300">Our thorough screening process ensures candidates match not just skills, but also culture and values.</p>
-        </div>
-        <div class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="handshake" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Long-term Partnership</h3>
-          <p class="text-gray-600 dark:text-gray-300">We build lasting relationships with our clients and candidates, supporting them beyond just placement.</p>
-        </div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {[
+          {
+            icon: 'bolt',
+            title: 'Digital-first DNA',
+            desc: 'Technology, BPM, and staffing experts collaborate from day one—ensuring solutions are agile, automated, and insight-driven.',
+          },
+          {
+            icon: 'chart',
+            title: 'Transparent governance',
+            desc: 'Real-time dashboards, OKR alignment, and executive reviews keep programs on track and continuously improving.',
+          },
+          {
+            icon: 'map-pin',
+            title: 'Global-ready operations',
+            desc: 'Delivery hubs in Bangalore, Hyderabad, and NCR—supported by partner networks across APAC, EMEA, and North America.',
+          },
+        ].map(({ icon, title, desc }) => (
+          <Card hover={false}>
+            <div class="mb-4 text-[var(--secondary)]">
+              <Icon name={icon} class="w-10 h-10" />
+            </div>
+            <h3 class="text-xl font-semibold text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="mt-3 text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+              {desc}
+            </p>
+          </Card>
+        ))}
       </div>
+    </div>
+  </Section>
+
+  <!-- Delivery Snapshot -->
+  <Section>
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Delivery snapshot
+        </h2>
+      </div>
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+        {[
+          { value: '900+', label: 'Digital workforce specialists' },
+          { value: '6', label: 'Delivery hubs & partner sites' },
+          { value: '1.5M+', label: 'Support hours executed yearly' },
+          { value: '98%', label: 'Client retention over 3 years' },
+        ].map(({ value, label }) => (
+          <Card class="text-center">
+            <div class="text-4xl font-extrabold bg-clip-text text-transparent" style="background-image: var(--gradient-primary);">
+              {value}
+            </div>
+            <div class="mt-2 text-sm text-[var(--text-muted)]">{label}</div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section background="gradient">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white">
+        Meet the team behind our delivery excellence
+      </h2>
+      <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+        We’re ready to share more about our playbooks, centers of excellence, and success stories tailored to your industry.
+      </p>
+      <Button href="/contact" variant="primary" size="lg" class="bg-white text-[var(--primary)] hover:bg-white/90">
+        Schedule a conversation
+      </Button>
     </div>
   </Section>
 </BaseLayout>

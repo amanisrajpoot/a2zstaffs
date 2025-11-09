@@ -70,38 +70,38 @@ const jobs = [
 ];
 ---
 
-<BaseLayout title="Job Openings - A2Z Staffing Solutions">
+<BaseLayout title="Job Openings — A2Z Digital Workforce">
   <Hero
-    title="Find Your Next Opportunity"
-    subtitle="Browse our latest job openings and take the next step in your career"
-    primaryCTA={{ text: "Apply Now", href: "#jobs" }}
+    title="Explore product, CX, BPM, and leadership roles with top innovators"
+    subtitle="Search curated openings from our client network or share your profile for upcoming squads."
+    primaryCTA={{ text: "Search openings", href: "#jobs" }}
     background="gradient"
   />
 
   <Section id="jobs">
-    <div class="container mx-auto px-4">
+    <div class="container">
       <!-- Search and Filters -->
       <div class="mb-8">
         <Card class="p-6">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label for="search" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="search" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Search Jobs
               </label>
               <input
                 type="text"
                 id="search"
                 placeholder="Job title, skills, or company..."
-                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
             <div>
-              <label for="location" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="location" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Location
               </label>
               <select
                 id="location"
-                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               >
                 <option value="">All Locations</option>
                 <option value="bangalore">Bangalore</option>
@@ -112,12 +112,12 @@ const jobs = [
               </select>
             </div>
             <div>
-              <label for="type" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="type" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Job Type
               </label>
               <select
                 id="type"
-                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-2 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               >
                 <option value="">All Types</option>
                 <option value="full-time">Full-time</option>
@@ -131,44 +131,44 @@ const jobs = [
 
       <!-- Job Listings -->
       <div class="mb-6">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+        <h2 class="text-2xl font-semibold text-[var(--text-secondary)] dark:text-white mb-2">
           {jobs.length} Open Positions
         </h2>
-        <p class="text-gray-600 dark:text-gray-300">
-          Find the perfect role that matches your skills and career goals
+        <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+          Discover roles in engineering, customer experience, BPM operations, and strategic leadership
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-6">
         {jobs.map((job) => (
-          <Card class="hover:shadow-xl transition-all">
+          <Card class="hover:shadow-[var(--shadow-md)] transition-all">
             <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
               <div class="flex-1">
                 <div class="flex items-start gap-4 mb-3">
-                  <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 rounded-xl bg-[rgba(29,78,216,0.08)] flex items-center justify-center flex-shrink-0">
                     <span class="text-2xl">💼</span>
                   </div>
                   <div class="flex-1">
-                    <h3 class="text-xl font-bold mb-1 text-gray-900 dark:text-white">
+                    <h3 class="text-xl font-semibold mb-1 text-[var(--text-secondary)] dark:text-white">
                       {job.title}
                     </h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-2">
+                    <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/70 mb-2">
                       {job.company} • {job.location}
                     </p>
                     <div class="flex flex-wrap gap-2 mb-3">
-                      <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                      <span class="px-3 py-1 rounded-full text-sm font-medium bg-[rgba(29,78,216,0.12)] text-[var(--primary)]">
                         {job.type}
                       </span>
-                      <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                      <span class="px-3 py-1 rounded-full text-sm font-medium bg-[rgba(14,165,233,0.12)] text-[var(--secondary)]">
                         {job.salary}
                       </span>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-300 mb-3">
+                    <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80 mb-3">
                       {job.description}
                     </p>
                     <div class="flex flex-wrap gap-2">
                       {job.skills.map((skill) => (
-                        <span class="px-2 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded text-xs font-medium">
+                        <span class="px-2 py-1 rounded text-xs font-medium bg-[rgba(15,118,110,0.1)] text-[var(--accent)] dark:bg-[rgba(15,118,110,0.25)] dark:text-[var(--accent)]">
                           {skill}
                         </span>
                       ))}
@@ -191,13 +191,15 @@ const jobs = [
 
       <!-- CTA -->
       <div class="mt-12 text-center">
-        <Card class="bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 dark:from-indigo-700 dark:via-purple-700 dark:to-cyan-600 text-white border-0">
-          <h3 class="text-2xl font-bold mb-3">Don't See a Match?</h3>
+        <Card class="relative overflow-hidden border-0 text-white">
+          <div class="absolute inset-0 -z-10 opacity-90" style="background: var(--gradient-primary);"></div>
+          <div class="absolute inset-0 -z-10 opacity-60 blur-3xl" style="background: var(--gradient-hero);"></div>
+          <h3 class="text-2xl font-semibold mb-3">Don't see a match?</h3>
           <p class="mb-6 text-white/90">
-            Submit your resume and we'll notify you when a suitable position opens up
+            Submit your profile and we’ll notify you as soon as a relevant squad or role opens up.
           </p>
-          <Button href="/candidates" variant="primary" size="lg" class="bg-white text-indigo-600 hover:bg-gray-100">
-            Submit Resume
+          <Button href="/candidates" variant="primary" size="lg" class="bg-white text-[var(--primary)] hover:bg-white/90">
+            Share your profile
           </Button>
         </Card>
       </div>

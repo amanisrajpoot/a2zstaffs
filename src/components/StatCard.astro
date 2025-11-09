@@ -13,14 +13,14 @@ const { number, label, icon } = Astro.props;
 
 <Card class="text-center">
   {icon && (
-    <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
+    <div class="mb-4 text-[var(--secondary)] flex justify-center">
       <Icon name={icon} class="w-8 h-8" />
     </div>
   )}
-  <div class="text-4xl md:text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+  <div class="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent" style="background-image: var(--gradient-primary);">
     {number}
   </div>
-  <div class="text-gray-600 dark:text-gray-300 text-lg">
+  <div class="text-[var(--text-muted)] dark:text-[var(--text-secondary)] text-lg">
     {label}
   </div>
 </Card>

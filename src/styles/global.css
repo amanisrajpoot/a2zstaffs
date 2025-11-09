@@ -1,69 +1,79 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ============================================
    VIBRANT TECH-FRIENDLY DESIGN SYSTEM
    ============================================ */
 
 :root {
-  /* ===== VIBRANT TECH COLOR PALETTE ===== */
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
-  --secondary: #06b6d4;
-  --secondary-dark: #0891b2;
-  --secondary-light: #22d3ee;
-  --accent: #10b981;
-  --accent-dark: #059669;
+  /* ===== MODERN CORPORATE COLOR PALETTE ===== */
+  --primary: #1d4ed8;
+  --primary-dark: #1e3a8a;
+  --primary-light: #60a5fa;
+  --secondary: #0ea5e9;
+  --secondary-dark: #0369a1;
+  --secondary-light: #38bdf8;
+  --accent: #14b8a6;
+  --accent-dark: #0f766e;
   --warning: #f59e0b;
   --error: #ef4444;
   
   /* ===== NEUTRAL GRAYS ===== */
-  --bg: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #f1f5f9;
-  --text: #1e293b;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
-  --border-dark: #cbd5e1;
+  --bg: #f8fafc;
+  --bg-secondary: #eef2ff;
+  --bg-tertiary: #e0f2fe;
+  --bg-elevated: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #1f2937;
+  --text-muted: #475569;
+  --border: #dbeafe;
+  --border-dark: #bae6fd;
   
   /* ===== SHADOWS ===== */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 6px 20px -15px rgba(17, 24, 39, 0.5);
+  --shadow-md: 0 18px 40px -25px rgba(29, 78, 216, 0.35);
+  --shadow-lg: 0 32px 60px -30px rgba(14, 165, 233, 0.4);
+  --shadow-xl: 0 40px 80px -25px rgba(14, 165, 233, 0.45);
+
+  /* ===== SURFACE BLURS ===== */
+  --glass-light: rgba(255, 255, 255, 0.7);
+  --glass-dark: rgba(15, 23, 42, 0.7);
   
   /* ===== VIBRANT TECH GRADIENTS ===== */
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --gradient-hero: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
-  --gradient-subtle: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --gradient-primary: linear-gradient(120deg, #1d4ed8 0%, #0ea5e9 50%, #14b8a6 100%);
+  --gradient-hero: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.35) 0%, rgba(14, 165, 233, 0.45) 35%, rgba(29, 78, 216, 0.9) 100%);
+  --gradient-subtle: linear-gradient(140deg, rgba(226, 232, 240, 0.6) 0%, rgba(191, 219, 254, 0.7) 45%, rgba(224, 242, 254, 0.7) 100%);
 }
 
 .dark {
-  --bg: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-tertiary: #334155;
+  --bg: #050b19;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #0b1e3d;
+  --bg-elevated: #111827;
   --text: #f8fafc;
-  --text-secondary: #cbd5e1;
+  --text-secondary: #cbd5f5;
   --text-muted: #94a3b8;
-  --border: #334155;
-  --border-dark: #475569;
-  
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
-  
-  --gradient-hero: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  --border: #1e3a8a;
+  --border-dark: #0f172a;
+
+  --shadow-sm: 0 6px 18px -12px rgba(59, 130, 246, 0.4);
+  --shadow-md: 0 20px 45px -25px rgba(56, 189, 248, 0.45);
+  --shadow-lg: 0 40px 65px -25px rgba(14, 165, 233, 0.45);
+  --shadow-xl: 0 45px 90px -30px rgba(56, 189, 248, 0.5);
+
+  --glass-light: rgba(15, 23, 42, 0.65);
+  --glass-dark: rgba(2, 6, 23, 0.65);
+
+  --gradient-hero: radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.4) 0%, rgba(29, 78, 216, 0.75) 60%, rgba(15, 23, 42, 0.95) 100%);
 }
 
 /* ===== TYPOGRAPHY ===== */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--bg);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.65;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,17 +83,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 { font-size: clamp(2.75rem, 5vw, 3.75rem); }
+h2 { font-size: clamp(2rem, 3.5vw, 3.125rem); }
+h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h4 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+h5 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+h6 { font-size: clamp(1.1rem, 1.7vw, 1.25rem); }
 
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.75rem; }
+  h1 { font-size: clamp(2.25rem, 8vw, 2.95rem); }
+  h2 { font-size: clamp(1.85rem, 6.5vw, 2.4rem); }
+  h3 { font-size: clamp(1.6rem, 5.5vw, 2rem); }
 }
 
 /* ===== SMOOTH SCROLLING ===== */
@@ -94,26 +104,26 @@ html {
 /* ===== UTILITY CLASSES ===== */
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1220px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.75rem;
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 5.5rem 0;
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 3rem 0;
-  }
+    .section {
+      padding: 3.5rem 0;
+    }
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -122,10 +132,26 @@ html {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.7s ease-out;
 }
 
 /* ===== TRANSITIONS ===== */
 * {
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+::selection {
+  background: rgba(29, 78, 216, 0.2);
+  color: var(--text);
+}
+
+.glass-surface {
+  background: var(--glass-light);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-md);
+}
+
+.dark .glass-surface {
+  background: var(--glass-dark);
+  box-shadow: var(--shadow-lg);
 }

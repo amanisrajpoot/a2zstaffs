@@ -10,13 +10,22 @@ const {
 } = Astro.props;
 
 const backgroundClasses = {
-  default: 'bg-white dark:bg-slate-900',
-  secondary: 'bg-gray-50 dark:bg-slate-800',
-  gradient: 'bg-gradient-to-br from-blue-600 to-sky-500 dark:from-blue-800 dark:to-sky-700',
+  default: 'relative bg-[var(--bg-elevated)] dark:bg-[var(--bg)]',
+  secondary: 'relative bg-[var(--bg-secondary)] dark:bg-[var(--bg-tertiary)]',
+  gradient: 'relative overflow-hidden text-white',
 };
 ---
 
 <section class={`section ${backgroundClasses[background]} ${className}`}>
-  <slot />
+  {background === 'gradient' && (
+    <>
+      <div class="absolute inset-0 -z-20 opacity-90" style="background: var(--gradient-primary);"></div>
+      <div class="absolute inset-0 -z-10 opacity-60 blur-3xl" style="background: var(--gradient-hero);"></div>
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.25)_0,rgba(255,255,255,0)_55%)]"></div>
+    </>
+  )}
+  <div class={background === 'gradient' ? 'relative z-10' : ''}>
+    <slot />
+  </div>
 </section>
 

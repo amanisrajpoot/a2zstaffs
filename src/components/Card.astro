@@ -9,8 +9,9 @@ const {
   hover = true,
 } = Astro.props;
 
-const baseClasses = 'bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 p-6 transition-all duration-200';
-const hoverClasses = hover ? 'hover:shadow-lg hover:-translate-y-1' : '';
+const baseClasses =
+  'bg-[var(--bg-elevated)] dark:bg-[var(--bg)] rounded-2xl border border-[var(--border)]/70 dark:border-[var(--border)]/30 p-6 shadow-[var(--shadow-sm)] transition-all duration-300';
+const hoverClasses = hover ? 'hover:shadow-[var(--shadow-md)] hover:-translate-y-1' : '';
 ---
 
 <div class={`${baseClasses} ${hoverClasses} ${className}`}>
