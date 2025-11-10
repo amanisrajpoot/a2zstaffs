@@ -8,12 +8,12 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="Services — A2Z Digital Workforce">
-  <Hero
-    title="Full-stack IT, BPO & staffing services built around your roadmap"
-    subtitle="A2Z Digital Workforce brings together digital engineering, business process outsourcing, and talent ecosystems under one governance model. Engage us for outcome-led programs or embed our experts within your existing delivery."
-    background="gradient"
-  />
+  <BaseLayout title="Services — A2Z Digital Workforce">
+    <Hero
+      title="Full-stack services, operations, and staffing shaped around your roadmap"
+      subtitle="A2Z Digital Workforce blends product engineering, experience operations, and talent ecosystems under one governance model. Engage us for outcome-led programs or embed our experts within your existing delivery."
+      background="secondary"
+    />
 
   <!-- Service Pillars -->
   <Section>
@@ -30,37 +30,37 @@ import Icon from '../components/Icon.astro';
         </p>
       </div>
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-        {[
-          {
-            icon: 'computer',
-            label: 'Digital engineering',
-            title: 'Technology & product delivery',
-            bullets: [
-              'Product engineering squads for web, mobile, SaaS, and platform builds',
-              'Core modernization, API-first integrations, and migration accelerators',
-              'DevSecOps, automation, and site reliability engineering as a managed service',
-            ],
-          },
-          {
-            icon: 'document',
-            label: 'BPO & CX',
-            title: 'Experience & back-office operations',
-            bullets: [
-              'Customer support pods covering voice, email, chat, and social channels',
-              'Finance, procurement, research, and knowledge process operations',
-              'KPI-led governance with quality assurance, analytics, and automation roadmaps',
-            ],
-          },
-          {
-            icon: 'users',
-            label: 'Talent & staffing',
-            title: 'Strategic workforce orchestration',
-            bullets: [
-              'Recruitment process outsourcing tailored for tech and operations roles',
-              'On-demand contract, gig, and BOT (build-operate-transfer) staffing models',
-              'Leadership, niche skill hiring, and talent advisory for scaling enterprises',
-            ],
-          },
+          {[
+            {
+              icon: 'computer',
+              label: 'Digital engineering',
+              title: 'Technology & product delivery',
+              bullets: [
+                'Product engineering squads for web, mobile, SaaS, and platform builds',
+                'Core modernization, API-first integrations, and migration accelerators',
+                'DevSecOps, automation, and site reliability engineering as a managed service',
+              ],
+            },
+            {
+              icon: 'document',
+              label: 'Experience operations',
+              title: 'Customer & business operations',
+              bullets: [
+                'Customer support pods covering voice, email, chat, and social channels',
+                'Finance, procurement, research, and knowledge operations with digital tooling',
+                'KPI-led governance with quality assurance, analytics, and automation roadmaps',
+              ],
+            },
+            {
+              icon: 'users',
+              label: 'Talent programs',
+              title: 'Strategic workforce orchestration',
+              bullets: [
+                'Recruitment programs tailored for technology and operations roles',
+                'On-demand contract, gig, and BOT (build-operate-transfer) staffing models',
+                'Leadership, niche skill hiring, and talent advisory for scaling enterprises',
+              ],
+            },
         ].map(({ icon, label, title, bullets }) => (
           <Card class="h-full">
             <div class="inline-flex items-center gap-3 rounded-xl bg-[rgba(29,78,216,0.08)] p-3 text-[var(--primary)]">
@@ -119,7 +119,7 @@ import Icon from '../components/Icon.astro';
           icon="users"
         />
         <ServiceCard
-          title="Finance & back-office BPM"
+          title="Business enablement offices"
           description="Record-to-report, procure-to-pay, order-to-cash, and knowledge services anchored to SLA and compliance frameworks."
           icon="document"
         />
@@ -206,20 +206,20 @@ import Icon from '../components/Icon.astro';
   <!-- CTA -->
   <Section background="gradient">
     <div class="container text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white">
-        Let’s architect the next phase of your IT, BPO, or staffing journey
-      </h2>
-      <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-        Share your priorities and we’ll bring the right mix of talent, process frameworks, and accelerators to deliver measurable value.
-      </p>
-      <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
-        <Button href="/contact" variant="primary" size="lg" class="bg-white text-[var(--primary)] hover:bg-white/90">
-          Book a discovery call
-        </Button>
-        <Button href="/clients" variant="outline" size="lg" class="border-white text-white hover:bg-white/10">
-          View client programs
-        </Button>
-      </div>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white">
+          Let’s architect the next phase of your delivery journey
+        </h2>
+        <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+          Share your priorities and we’ll bring the right mix of talent, process frameworks, and accelerators to deliver measurable value.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <Button href="/contact" variant="contrast" size="lg">
+            Book a discovery call
+          </Button>
+          <Button href="/clients" variant="soft" size="lg">
+            View client programs
+          </Button>
+        </div>
     </div>
   </Section>
 </BaseLayout>

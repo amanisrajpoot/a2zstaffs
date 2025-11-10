@@ -1,6 +1,30 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import Button from './Button.astro';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Solutions' },
+  { href: '/clients', label: 'For Clients' },
+  { href: '/candidates', label: 'Talent Network' },
+];
+
+const normalizePath = (path: string) => {
+  if (path.length > 1 && path.endsWith('/')) {
+    return path.slice(0, -1);
+  }
+  return path;
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
+const isActive = (href: string) => {
+  const normalizedHref = normalizePath(href);
+  if (normalizedHref === '/') {
+    return currentPath === '/';
+  }
+  return currentPath === normalizedHref || currentPath.startsWith(`${normalizedHref}/`);
+};
 ---
 
 <header class="sticky top-0 z-50">
@@ -12,46 +36,42 @@ import Button from './Button.astro';
           <div class="w-12 h-12 rounded-2xl bg-[var(--gradient-primary)] flex items-center justify-center text-white font-extrabold text-lg shadow-[var(--shadow-sm)] group-hover:shadow-[var(--shadow-md)] transition-shadow">
             A2Z
           </div>
-          <div class="flex flex-col leading-tight">
-            <span class="text-xl lg:text-2xl font-extrabold bg-clip-text text-transparent" style="background-image: var(--gradient-primary);">
-              Digital Workforce
-            </span>
-            <span class="text-[0.75rem] lg:text-xs uppercase tracking-[0.35em] text-[var(--text-muted)] group-hover:text-[var(--primary)] transition-colors">
-              IT • BPO • Staffing
-            </span>
-          </div>
+            <div class="flex flex-col leading-tight">
+              <span class="text-xl lg:text-2xl font-extrabold tracking-[-0.01em] text-[var(--text-secondary)] dark:text-white drop-shadow-sm">
+                Digital Workforce
+              </span>
+              <span class="text-[0.75rem] lg:text-xs uppercase tracking-[0.35em] text-[var(--text-muted)] group-hover:text-[var(--primary)] transition-colors">
+                Advisory • Talent • Platforms
+              </span>
+            </div>
         </a>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-1">
-          <nav class="flex items-center gap-1 mr-4">
-            <a href="/" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Home
-            </a>
-            <a href="/about" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              About
-            </a>
-            <a href="/services" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Services
-            </a>
-            <a href="/jobs" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Jobs
-            </a>
-            <a href="/candidates" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Candidates
-            </a>
-            <a href="/clients" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Clients
-            </a>
-            <a href="/contact" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Contact
-            </a>
-          </nav>
-          <ThemeToggle />
-          <Button href="/contact" variant="primary" size="sm" class="ml-3">
-            Let's Talk
-          </Button>
-        </div>
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-1">
+            <nav class="flex items-center gap-1 mr-4">
+              {navItems.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <a
+                    href={item.href}
+                    aria-current={active ? 'page' : undefined}
+                    class:list={[
+                      'px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-elevated)]',
+                      active
+                        ? 'text-[var(--primary)] bg-[var(--nav-item-active)] shadow-[var(--shadow-sm)]'
+                        : 'text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--nav-item-hover)]',
+                    ]}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
+            </nav>
+            <ThemeToggle />
+            <Button href="/contact" variant="primary" size="sm" class="ml-3">
+              Let's Talk
+            </Button>
+          </div>
 
         <!-- Mobile Menu Button -->
         <div class="lg:hidden flex items-center gap-3">
@@ -72,42 +92,44 @@ import Button from './Button.astro';
       </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-[var(--border)]/60 pb-4">
-      <nav class="flex flex-col gap-1 pt-4">
-        <a href="/" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Home
-        </a>
-        <a href="/about" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          About
-        </a>
-        <a href="/services" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Services
-        </a>
-        <a href="/jobs" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Jobs
-        </a>
-        <a href="/candidates" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Candidates
-        </a>
-        <a href="/clients" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Clients
-        </a>
-        <a href="/contact" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Contact
-        </a>
-        <div class="px-4 pt-2">
-          <Button href="/contact" variant="primary" size="md" class="w-full">
-            Get Started
-          </Button>
-        </div>
-      </nav>
-    </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t border-[var(--border)]/60 pb-4">
+        <nav class="flex flex-col gap-1 pt-4">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
+            return (
+              <a
+                href={item.href}
+                aria-current={active ? 'page' : undefined}
+                class:list={[
+                  'px-4 py-3 rounded-xl text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-elevated)]',
+                  active
+                    ? 'text-[var(--primary)] bg-[var(--nav-item-active)] shadow-[var(--shadow-sm)]'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--nav-item-hover)]',
+                ]}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+          <a
+            href="/contact"
+            class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-secondary)] hover:text-[var(--primary)] hover:bg-[var(--nav-item-hover)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-elevated)]"
+          >
+            Contact
+          </a>
+          <div class="px-4 pt-2">
+            <Button href="/contact" variant="primary" size="md" class="w-full">
+              Get Started
+            </Button>
+          </div>
+        </nav>
+      </div>
   </div>
 </header>
 
 <script>
-  (function() {
+  (function () {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
@@ -115,7 +137,6 @@ import Button from './Button.astro';
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
         mobileMenu.classList.toggle('hidden');
         menuIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');

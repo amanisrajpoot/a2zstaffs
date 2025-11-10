@@ -36,8 +36,14 @@
   --shadow-xl: 0 40px 80px -25px rgba(14, 165, 233, 0.45);
 
   /* ===== SURFACE BLURS ===== */
-  --glass-light: rgba(255, 255, 255, 0.7);
+  --glass-light: rgba(255, 255, 255, 0.92);
   --glass-dark: rgba(15, 23, 42, 0.7);
+  --nav-item-hover: rgba(15, 23, 42, 0.05);
+  --nav-item-active: rgba(29, 78, 216, 0.12);
+  --input-bg: #ffffff;
+  --input-border: rgba(15, 23, 42, 0.14);
+  --input-placeholder: #94a3b8;
+  --input-text: #0f172a;
   
   /* ===== VIBRANT TECH GRADIENTS ===== */
   --gradient-primary: linear-gradient(120deg, #1d4ed8 0%, #0ea5e9 50%, #14b8a6 100%);
@@ -63,6 +69,12 @@
 
   --glass-light: rgba(15, 23, 42, 0.65);
   --glass-dark: rgba(2, 6, 23, 0.65);
+  --nav-item-hover: rgba(96, 165, 250, 0.18);
+  --nav-item-active: rgba(59, 130, 246, 0.22);
+  --input-bg: rgba(15, 23, 42, 0.9);
+  --input-border: rgba(148, 163, 184, 0.28);
+  --input-placeholder: rgba(148, 163, 184, 0.65);
+  --input-text: #f8fafc;
 
   --gradient-hero: radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.4) 0%, rgba(29, 78, 216, 0.75) 60%, rgba(15, 23, 42, 0.95) 100%);
 }
@@ -107,6 +119,28 @@ html {
   max-width: 1220px;
   margin: 0 auto;
   padding: 0 1.75rem;
+}
+
+/* ===== FORM CONTROLS ===== */
+input,
+textarea,
+select {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--input-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
 }
 
 .section {

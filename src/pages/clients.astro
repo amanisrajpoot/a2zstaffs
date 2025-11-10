@@ -7,14 +7,14 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="For Clients — A2Z Digital Workforce">
-  <Hero
-    title="Build agile IT, BPO, and staffing solutions with a single partner"
-    subtitle="Plug into cross-functional squads, CX pods, and embedded talent teams that flex with demand—without compromising governance or speed."
-    primaryCTA={{ text: "Request a delivery pod", href: "#request" }}
-    secondaryCTA={{ text: "Explore engagement models", href: "#services" }}
-    background="gradient"
-  />
+  <BaseLayout title="For Clients — A2Z Digital Workforce">
+    <Hero
+      title="Build adaptive services, operations, and staffing with a single partner"
+      subtitle="Plug into cross-functional squads, experience pods, and embedded talent teams that flex with demand—without compromising governance or speed."
+      primaryCTA={{ text: "Request a delivery pod", href: "#request" }}
+      secondaryCTA={{ text: "Explore engagement models", href: "#services" }}
+      background="default"
+    />
 
   <!-- Why Choose A2Z -->
   <Section id="services">
@@ -99,8 +99,8 @@ import Icon from '../components/Icon.astro';
             items: ['Full-stack engineering, QA, and UX pods', 'Platform modernization & integration teams', 'DevSecOps and SRE managed services'],
           },
           {
-            title: 'CX & BPM operations',
-            items: ['Omnichannel support desks with WFM & QA', 'Finance, procurement, and knowledge process pods', 'Analytics, RPA, and continuous improvement'],
+            title: 'Experience operations',
+            items: ['Omnichannel support desks with workforce & quality governance', 'Finance, procurement, and knowledge operations pods', 'Analytics, automation, and continuous improvement'],
           },
           {
             title: 'Talent ecosystems',
@@ -240,14 +240,14 @@ import Icon from '../components/Icon.astro';
               <label for="requiredSkills" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Skills & domain focus *
               </label>
-              <input
-                type="text"
-                id="requiredSkills"
-                name="requiredSkills"
-                required
-                placeholder="e.g., React, Node.js, AWS | Healthcare CX | Finance & accounting BPM"
-                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
-              />
+                <input
+                  type="text"
+                  id="requiredSkills"
+                  name="requiredSkills"
+                  required
+                  placeholder="e.g., React, Node.js, AWS | Healthcare support | Finance & accounting operations"
+                  class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
+                />
             </div>
 
             <div>
