@@ -2,31 +2,39 @@
 import Icon from './Icon.astro';
 ---
 
-<footer class="bg-slate-900 dark:bg-slate-950 text-slate-300 border-t border-slate-800 mt-auto">
-  <div class="container mx-auto px-4 lg:px-6">
+<footer class="relative mt-auto overflow-hidden border-t border-[var(--border)]/40 bg-[#010b2a] text-slate-200">
+  <div class="absolute inset-0 -z-10 opacity-60" style="background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.35), transparent 45%), radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.3), transparent 55%);"></div>
+  <div class="absolute inset-0 -z-10 opacity-40 blur-3xl" style="background: linear-gradient(135deg, rgba(15, 118, 110, 0.25), rgba(14, 165, 233, 0.18));"></div>
+
+  <div class="container">
     <!-- Main Footer Content -->
-    <div class="py-12 lg:py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <div class="py-14 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <!-- Company Info -->
-        <div class="lg:col-span-1">
-          <h3 class="text-xl lg:text-2xl font-bold mb-4 text-white">A2Z Staffing Solutions</h3>
-          <p class="text-sm mb-6 text-slate-400 leading-relaxed">
-            Connecting businesses with top talent and empowering individuals to find meaningful employment opportunities.
+        <div class="space-y-5">
+          <div>
+            <span class="inline-flex items-center rounded-full bg-[rgba(59,130,246,0.15)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-200">
+              Future-ready outsourcing
+            </span>
+          </div>
+          <h3 class="text-2xl font-bold text-white">A2Z Digital Workforce</h3>
+          <p class="text-sm leading-relaxed text-slate-300">
+            Integrated IT services, BPM operations, and workforce solutions for global enterprises. We design agile talent ecosystems that scale with your roadmap.
           </p>
-          <div class="flex gap-4">
-            <a href="#" class="text-slate-400 hover:text-slate-200 transition-colors" aria-label="LinkedIn">
+          <div class="flex gap-4 text-slate-300">
+            <a href="#" class="transition-colors hover:text-white" aria-label="LinkedIn">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
               </svg>
             </a>
-            <a href="#" class="text-slate-400 hover:text-slate-200 transition-colors" aria-label="Twitter">
+            <a href="#" class="transition-colors hover:text-white" aria-label="Twitter">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
               </svg>
             </a>
-            <a href="#" class="text-slate-400 hover:text-slate-200 transition-colors" aria-label="Facebook">
+            <a href="#" class="transition-colors hover:text-white" aria-label="Facebook">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
           </div>
@@ -34,35 +42,35 @@ import Icon from './Icon.astro';
 
         <!-- Quick Links -->
         <div>
-          <h4 class="text-base lg:text-lg font-semibold mb-4 text-white">Quick Links</h4>
-          <ul class="space-y-2.5 text-sm">
+          <h4 class="text-base font-semibold uppercase tracking-widest text-slate-200">Company</h4>
+          <ul class="mt-5 space-y-3 text-sm">
             <li>
-              <a href="/" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
+              <a href="/" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
                 Home
               </a>
             </li>
             <li>
-              <a href="/about" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
+              <a href="/about" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
                 About Us
               </a>
             </li>
             <li>
-              <a href="/services" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
+              <a href="/services" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
                 Services
               </a>
             </li>
             <li>
-              <a href="/jobs" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
+              <a href="/jobs" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
                 Job Openings
               </a>
             </li>
             <li>
-              <a href="/contact" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
+              <a href="/contact" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
                 Contact
               </a>
             </li>
@@ -71,24 +79,24 @@ import Icon from './Icon.astro';
 
         <!-- For Candidates -->
         <div>
-          <h4 class="text-base lg:text-lg font-semibold mb-4 text-white">For Candidates</h4>
-          <ul class="space-y-2.5 text-sm">
+          <h4 class="text-base font-semibold uppercase tracking-widest text-slate-200">For Candidates</h4>
+          <ul class="mt-5 space-y-3 text-sm">
             <li>
-              <a href="/candidates" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
-                Browse Jobs
+              <a href="/candidates" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
+                Browse Roles
               </a>
             </li>
             <li>
-              <a href="/candidates#apply" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
+              <a href="/candidates#apply" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
                 Submit Resume
               </a>
             </li>
             <li>
-              <a href="/jobs" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
-                Job Listings
+              <a href="/jobs" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
+                Job Alerts
               </a>
             </li>
           </ul>
@@ -96,24 +104,24 @@ import Icon from './Icon.astro';
 
         <!-- For Clients -->
         <div>
-          <h4 class="text-base lg:text-lg font-semibold mb-4 text-white">For Clients</h4>
-          <ul class="space-y-2.5 text-sm">
+          <h4 class="text-base font-semibold uppercase tracking-widest text-slate-200">For Clients</h4>
+          <ul class="mt-5 space-y-3 text-sm">
             <li>
-              <a href="/clients" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
-                Our Services
+              <a href="/clients" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
+                Engagement Models
               </a>
             </li>
             <li>
-              <a href="/clients#request" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
-                Request Talent
+              <a href="/services#outsourcing" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
+                Outsourcing Playbooks
               </a>
             </li>
             <li>
-              <a href="/contact" class="text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-2">
-                <Icon name="check" class="w-3.5 h-3.5 opacity-50" />
-                Get in Touch
+              <a href="/contact" class="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white">
+                <Icon name="check" class="w-3.5 h-3.5 opacity-60" />
+                Schedule a Consultation
               </a>
             </li>
           </ul>
@@ -122,21 +130,23 @@ import Icon from './Icon.astro';
     </div>
 
     <!-- Newsletter Subscription -->
-    <div class="border-t border-slate-800 pt-8 pb-8">
-      <div class="max-w-md mx-auto text-center">
-        <h4 class="text-base lg:text-lg font-semibold mb-2 text-white">Subscribe to Our Newsletter</h4>
-        <p class="text-xs lg:text-sm mb-4 text-slate-400">Get the latest job openings and industry insights</p>
-        <form action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST" class="flex flex-col sm:flex-row gap-2">
+    <div class="border-t border-white/10 py-10">
+      <div class="max-w-3xl mx-auto text-center space-y-5">
+        <h4 class="text-lg font-semibold text-white">Stay ahead of the talent economy</h4>
+        <p class="text-sm text-slate-300">
+          Insights on tech hiring, BPM operations, and workforce transformation delivered monthly.
+        </p>
+        <form action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST" class="flex flex-col gap-3 sm:flex-row sm:items-center">
           <input
             type="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder="Work email"
             required
-            class="flex-1 px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent text-sm"
+            class="flex-1 rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-slate-300 focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60"
           />
           <button
             type="submit"
-            class="px-6 py-2.5 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-colors text-sm whitespace-nowrap"
+            class="rounded-xl bg-[var(--secondary)] px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:scale-105 hover:bg-[var(--secondary-dark)]"
           >
             Subscribe
           </button>
@@ -145,21 +155,23 @@ import Icon from './Icon.astro';
     </div>
 
     <!-- Copyright -->
-    <div class="border-t border-slate-800 pt-6 pb-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs lg:text-sm text-slate-400">
-        <p>&copy; {new Date().getFullYear()} A2Z Staffing Solutions. All rights reserved.</p>
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 items-center">
+    <div class="border-t border-white/10 py-6">
+      <div class="flex flex-col gap-4 text-xs text-slate-300 md:flex-row md:items-center md:justify-between">
+        <p>&copy; {new Date().getFullYear()} A2Z Digital Workforce. All rights reserved.</p>
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
           <div class="flex items-center gap-2">
-            <Icon name="phone" class="w-3.5 h-3.5" />
-            <a href="tel:+919110492256" class="hover:text-slate-200 transition-colors">+91 9110492256</a>
+            <Icon name="phone" class="w-3.5 h-3.5 text-[var(--secondary-light)]" />
+            <a href="tel:+919110492256" class="transition-colors hover:text-white">+91 9110492256</a>
           </div>
           <div class="flex items-center gap-2">
-            <Icon name="envelope" class="w-3.5 h-3.5" />
-            <a href="mailto:sales@a2zstaffs.com" class="hover:text-slate-200 transition-colors">sales@a2zstaffs.com</a>
+            <Icon name="envelope" class="w-3.5 h-3.5 text-[var(--secondary-light)]" />
+            <a href="mailto:sales@a2zstaffs.com" class="transition-colors hover:text-white">sales@a2zstaffs.com</a>
           </div>
         </div>
       </div>
-      <p class="text-center mt-4 text-xs text-slate-500">Nagasandra, Bangalore 560073, Karnataka, India</p>
+      <p class="mt-3 text-center text-[0.7rem] text-slate-400">
+        Nagasandra, Bangalore 560073, Karnataka, India
+      </p>
     </div>
   </div>
 </footer>

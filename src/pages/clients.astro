@@ -7,77 +7,78 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="For Clients - A2Z Staffing Solutions">
+<BaseLayout title="For Clients — A2Z Digital Workforce">
   <Hero
-    title="Find the Talent You Need"
-    subtitle="We help businesses build exceptional teams with the right people"
-    primaryCTA={{ text: "Request Talent", href: "#request" }}
-    secondaryCTA={{ text: "Learn More", href: "#services" }}
+    title="Build agile IT, BPO, and staffing solutions with a single partner"
+    subtitle="Plug into cross-functional squads, CX pods, and embedded talent teams that flex with demand—without compromising governance or speed."
+    primaryCTA={{ text: "Request a delivery pod", href: "#request" }}
+    secondaryCTA={{ text: "Explore engagement models", href: "#services" }}
     background="gradient"
   />
 
-  <!-- Why Choose Us -->
+  <!-- Why Choose A2Z -->
   <Section id="services">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Why Choose Us
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Why digital leaders trust A2Z
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          We deliver results that matter
+        <p class="mt-4 text-lg text-[var(--text-muted)]">
+          Whether you’re scaling a product roadmap, standing up CX operations, or hiring niche talent, we deliver with speed and transparency.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="bolt" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Fast Turnaround</h3>
-          <p class="text-gray-600 dark:text-gray-300">We understand time is critical. Our streamlined process ensures quick placements without compromising quality.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="target" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Quality Matches</h3>
-          <p class="text-gray-600 dark:text-gray-300">Thorough screening ensures candidates match not just skills, but also culture and values.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="handshake" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Partnership</h3>
-          <p class="text-gray-600 dark:text-gray-300">We build lasting relationships and support you beyond just placement.</p>
-        </Card>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {[
+          {
+            icon: 'rocket',
+            title: 'Launch-ready pods',
+            desc: 'Product squads, CX desks, and talent teams stood up in weeks, powered by reusable playbooks.',
+          },
+          {
+            icon: 'chart',
+            title: 'Outcome governance',
+            desc: 'Dashboards, OKRs, and executive reviews aligned to your KPIs keep delivery on course.',
+          },
+          {
+            icon: 'handshake',
+            title: 'True partnership',
+            desc: 'Flexible engagement models—managed services, embedded squads, BOT—designed around your goals.',
+          },
+        ].map(({ icon, title, desc }) => (
+          <Card class="text-center">
+            <div class="mb-4 flex justify-center text-[var(--primary)]">
+              <Icon name={icon} class="w-10 h-10" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">{desc}</p>
+          </Card>
+        ))}
       </div>
     </div>
   </Section>
 
-  <!-- Our Process -->
+  <!-- Engagement Process -->
   <Section background="secondary">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          How We Work
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)] dark:text-white">
+          A proven, transparent engagement journey
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          A proven process that delivers results
-        </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
         {[
-          { step: '1', title: 'Consultation', desc: 'We understand your requirements, company culture, and team dynamics' },
-          { step: '2', title: 'Sourcing', desc: 'We tap into our extensive network and use advanced sourcing techniques' },
-          { step: '3', title: 'Screening', desc: 'Thorough screening including technical assessment and cultural fit evaluation' },
-          { step: '4', title: 'Placement', desc: 'We facilitate interviews and help you make the right hiring decision' },
+          { step: '01', title: 'Discover', desc: 'Align on business objectives, current-state maturity, and expected outcomes with our solution architects.' },
+          { step: '02', title: 'Design', desc: 'Co-create delivery plans, pod compositions, and toolchain integrations within 2-4 weeks.' },
+          { step: '03', title: 'Deliver', desc: 'Execute sprints, SLAs, and staffing fulfilment with shared dashboards and weekly governance.' },
+          { step: '04', title: 'Optimize', desc: 'Layer in automation, analytics, and continuous improvement to compound value.' },
         ].map(({ step, title, desc }) => (
-          <div class="text-center">
-            <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{step}</span>
+          <Card class="h-full text-center">
+            <div class="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(29,78,216,0.12)] text-sm font-semibold uppercase tracking-[0.3em] text-[var(--primary)]">
+              {step}
             </div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{desc}</p>
-          </div>
+            <h3 class="text-lg font-semibold text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="mt-3 text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">{desc}</p>
+          </Card>
         ))}
       </div>
     </div>
@@ -85,26 +86,49 @@ import Icon from '../components/Icon.astro';
 
   <!-- Services for Clients -->
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Services for Clients
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Engage us across the digital operations lifecycle
         </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {[
-          'IT Staffing & Recruitment',
-          'Permanent Placement Services',
-          'Contract & Temporary Staffing',
-          'Executive Search',
-          'Recruitment Process Outsourcing (RPO)',
-          'Talent Consulting & Strategy',
-        ].map((service) => (
+          {
+            title: 'Product & platform squads',
+            items: ['Full-stack engineering, QA, and UX pods', 'Platform modernization & integration teams', 'DevSecOps and SRE managed services'],
+          },
+          {
+            title: 'CX & BPM operations',
+            items: ['Omnichannel support desks with WFM & QA', 'Finance, procurement, and knowledge process pods', 'Analytics, RPA, and continuous improvement'],
+          },
+          {
+            title: 'Talent ecosystems',
+            items: ['Embedded RPO pods for volume & niche hiring', 'BOT and contract staffing for rapid scale-ups', 'Leadership hiring and workforce planning'],
+          },
+          {
+            title: 'Advisory & enablement',
+            items: ['Operating model design and PMO support', 'Toolchain and automation assessments', 'Capability building & change management'],
+          },
+          {
+            title: 'Compliance & governance',
+            items: ['ISO, SOC, and data security aligned processes', 'Risk management and business continuity plans', 'Quarterly strategic reviews with CXOs'],
+          },
+          {
+            title: 'Transition & transformation',
+            items: ['Lift-and-shift of legacy operations', 'Greenfield delivery center setup', 'Optimization roadmaps with ROI tracking'],
+          },
+        ].map(({ title, items }) => (
           <Card>
-            <div class="flex items-center gap-3">
-              <Icon name="check" class="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-              <p class="text-gray-700 dark:text-gray-300 font-medium">{service}</p>
-            </div>
+            <h3 class="text-xl font-semibold text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <ul class="mt-4 space-y-3 text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+              {items.map((item) => (
+                <li class="flex gap-2">
+                  <Icon name="check" class="h-4 w-4 flex-none text-[var(--secondary)]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </Card>
         ))}
       </div>
@@ -113,22 +137,22 @@ import Icon from '../components/Icon.astro';
 
   <!-- Request Talent Form -->
   <Section background="secondary" id="request">
-    <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto">
+    <div class="container">
+      <div class="mx-auto max-w-2xl">
         <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Request Talent
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[var(--text-secondary)] dark:text-white">
+            Request talent or a delivery pod
           </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300">
-            Tell us about your requirements and we'll find the perfect candidates
+          <p class="text-lg text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+            Share your priorities and our solutions team will respond within one business day.
           </p>
         </div>
         <Card>
-            <form name="talent-request" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="space-y-6">
+          <form name="talent-request" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="space-y-6">
             <input type="hidden" name="form-name" value="talent-request" />
-            
+
             <div>
-              <label for="companyName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="companyName" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Company Name *
               </label>
               <input
@@ -136,13 +160,13 @@ import Icon from '../components/Icon.astro';
                 id="companyName"
                 name="companyName"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
-                <label for="contactName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                <label for="contactName" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Contact Name *
                 </label>
                 <input
@@ -150,11 +174,11 @@ import Icon from '../components/Icon.astro';
                   id="contactName"
                   name="contactName"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                 />
               </div>
               <div>
-                <label for="contactEmail" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                <label for="contactEmail" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Email Address *
                 </label>
                 <input
@@ -162,13 +186,13 @@ import Icon from '../components/Icon.astro';
                   id="contactEmail"
                   name="contactEmail"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                 />
               </div>
             </div>
 
             <div>
-              <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="phone" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Phone Number *
               </label>
               <input
@@ -176,65 +200,65 @@ import Icon from '../components/Icon.astro';
                 id="phone"
                 name="phone"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="jobTitle" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Job Title / Position *
+              <label for="jobTitle" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Role / Pod requirement *
               </label>
               <input
                 type="text"
                 id="jobTitle"
                 name="jobTitle"
                 required
-                placeholder="e.g., Senior Software Engineer"
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                placeholder="e.g., Payments product squad (5 engineers, 2 QA), CX pod for US time zone"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="jobType" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Job Type *
+              <label for="jobType" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Engagement model *
               </label>
               <select
                 id="jobType"
                 name="jobType"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               >
-                <option value="">Select job type</option>
-                <option value="full-time">Full-time</option>
-                <option value="contract">Contract</option>
-                <option value="part-time">Part-time</option>
-                <option value="temporary">Temporary</option>
+                <option value="">Select engagement</option>
+                <option value="managed-pod">Managed pod / outcome-based</option>
+                <option value="embedded-squad">Embedded squad / team augmentation</option>
+                <option value="staffing">Contract or permanent staffing</option>
+                <option value="bot">Build-operate-transfer</option>
               </select>
             </div>
 
             <div>
-              <label for="requiredSkills" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Required Skills *
+              <label for="requiredSkills" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Skills & domain focus *
               </label>
               <input
                 type="text"
                 id="requiredSkills"
                 name="requiredSkills"
                 required
-                placeholder="e.g., React, Node.js, AWS, 5+ years experience"
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                placeholder="e.g., React, Node.js, AWS | Healthcare CX | Finance & accounting BPM"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="timeline" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Timeline / Urgency *
+              <label for="timeline" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Timeline / urgency *
               </label>
               <select
                 id="timeline"
                 name="timeline"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               >
                 <option value="">Select timeline</option>
                 <option value="immediate">Immediate (1-2 weeks)</option>
@@ -245,16 +269,16 @@ import Icon from '../components/Icon.astro';
             </div>
 
             <div>
-              <label for="requirements" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Additional Requirements *
+              <label for="requirements" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Additional context *
               </label>
               <textarea
                 id="requirements"
                 name="requirements"
                 rows="5"
                 required
-                placeholder="Describe the role, responsibilities, company culture, and any other relevant details..."
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+                placeholder="Describe current challenges, success metrics, preferred tools, shift coverage, location preferences, etc."
+                class="w-full resize-none rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               ></textarea>
             </div>
 
@@ -267,4 +291,3 @@ import Icon from '../components/Icon.astro';
     </div>
   </Section>
 </BaseLayout>
-

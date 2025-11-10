@@ -7,30 +7,30 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="Contact Us - A2Z Staffing Solutions">
+<BaseLayout title="Contact — A2Z Digital Workforce">
   <Hero
-    title="Get in Touch"
-    subtitle="We're here to help with all your staffing needs"
+    title="Let’s design the next phase of your digital workforce"
+    subtitle="Share your vision and we’ll assemble the right mix of talent, processes, and accelerators to deliver outcomes."
     background="gradient"
   />
 
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+    <div class="container">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
         <!-- Contact Information -->
         <div>
-          <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-            Contact Information
+          <h2 class="text-3xl font-semibold mb-8 text-[var(--text-secondary)] dark:text-white">
+            Contact information
           </h2>
           <div class="space-y-6">
             <Card>
               <div class="flex items-start gap-4">
-                <div class="text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1">
+                <div class="text-[var(--primary)] flex-shrink-0 mt-1">
                   <Icon name="phone" class="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Phone</h3>
-                  <a href="tel:+919110492256" class="text-indigo-600 dark:text-indigo-400 hover:underline text-lg">
+                  <h3 class="font-semibold text-lg mb-2 text-[var(--text-secondary)] dark:text-white">Phone</h3>
+                  <a href="tel:+919110492256" class="text-[var(--primary)] hover:underline text-lg">
                     +91 9110492256
                   </a>
                 </div>
@@ -38,12 +38,12 @@ import Icon from '../components/Icon.astro';
             </Card>
             <Card>
               <div class="flex items-start gap-4">
-                <div class="text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1">
+                <div class="text-[var(--primary)] flex-shrink-0 mt-1">
                   <Icon name="envelope" class="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Email</h3>
-                  <a href="mailto:sales@a2zstaffs.com" class="text-indigo-600 dark:text-indigo-400 hover:underline text-lg">
+                  <h3 class="font-semibold text-lg mb-2 text-[var(--text-secondary)] dark:text-white">Email</h3>
+                  <a href="mailto:sales@a2zstaffs.com" class="text-[var(--primary)] hover:underline text-lg">
                     sales@a2zstaffs.com
                   </a>
                 </div>
@@ -51,12 +51,12 @@ import Icon from '../components/Icon.astro';
             </Card>
             <Card>
               <div class="flex items-start gap-4">
-                <div class="text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1">
+                <div class="text-[var(--primary)] flex-shrink-0 mt-1">
                   <Icon name="map-pin" class="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Address</h3>
-                  <p class="text-gray-600 dark:text-gray-300 text-lg">
+                  <h3 class="font-semibold text-lg mb-2 text-[var(--text-secondary)] dark:text-white">Address</h3>
+                  <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80 text-lg">
                     Nagasandra, Bangalore 560073<br />
                     Karnataka, India
                   </p>
@@ -65,12 +65,12 @@ import Icon from '../components/Icon.astro';
             </Card>
             <Card>
               <div class="flex items-start gap-4">
-                <div class="text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1">
+                <div class="text-[var(--primary)] flex-shrink-0 mt-1">
                   <Icon name="clock" class="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Business Hours</h3>
-                  <p class="text-gray-600 dark:text-gray-300">
+                  <h3 class="font-semibold text-lg mb-2 text-[var(--text-secondary)] dark:text-white">Business hours</h3>
+                  <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
                     Monday - Friday: 9:00 AM - 6:00 PM<br />
                     Saturday: 10:00 AM - 2:00 PM<br />
                     Sunday: Closed
@@ -82,16 +82,16 @@ import Icon from '../components/Icon.astro';
         </div>
 
         <!-- Contact Form -->
-        <div>
-          <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-            Send Us a Message
+          <div>
+            <h2 class="text-3xl font-semibold mb-8 text-[var(--text-secondary)] dark:text-white">
+              Send us a message
           </h2>
           <Card>
             <form name="contact" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" class="space-y-6">
               <input type="hidden" name="form-name" value="contact" />
               
               <div>
-                <label for="name" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  <label for="name" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Full Name *
                 </label>
                 <input
@@ -99,13 +99,13 @@ import Icon from '../components/Icon.astro';
                   id="name"
                   name="name"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all"
+                    class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 transition-all dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label for="email" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  <label for="email" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Email Address *
                 </label>
                 <input
@@ -113,13 +113,13 @@ import Icon from '../components/Icon.astro';
                   id="email"
                   name="email"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all"
+                    class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 transition-all dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  <label for="phone" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Phone Number
                 </label>
                 <input
@@ -132,14 +132,14 @@ import Icon from '../components/Icon.astro';
               </div>
 
               <div>
-                <label for="subject" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  <label for="subject" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Subject *
                 </label>
                 <select
                   id="subject"
                   name="subject"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all"
+                    class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 transition-all dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                 >
                   <option value="">Select a subject</option>
                   <option value="general">General Inquiry</option>
@@ -150,7 +150,7 @@ import Icon from '../components/Icon.astro';
               </div>
 
               <div>
-                <label for="message" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                  <label for="message" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Message *
                 </label>
                 <textarea
@@ -158,7 +158,7 @@ import Icon from '../components/Icon.astro';
                   name="message"
                   rows="5"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all resize-none"
+                    class="w-full resize-none rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 transition-all dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                   placeholder="Tell us how we can help you..."
                 ></textarea>
               </div>

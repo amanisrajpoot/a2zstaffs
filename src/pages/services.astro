@@ -5,107 +5,199 @@ import Section from '../components/Section.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="Our Services - A2Z Staffing Solutions">
+<BaseLayout title="Services — A2Z Digital Workforce">
   <Hero
-    title="Comprehensive Staffing Solutions"
-    subtitle="Tailored services to meet all your staffing needs"
+    title="Full-stack IT, BPO & staffing services built around your roadmap"
+    subtitle="A2Z Digital Workforce brings together digital engineering, business process outsourcing, and talent ecosystems under one governance model. Engage us for outcome-led programs or embed our experts within your existing delivery."
     background="gradient"
   />
 
-  <!-- Services Grid -->
+  <!-- Service Pillars -->
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Our Services
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <span class="inline-flex items-center gap-2 rounded-full bg-[rgba(29,78,216,0.08)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--primary)]">
+          Our service pillars
+        </span>
+        <h2 class="mt-6 text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Everything you need to design, run, and scale digital operations
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          From IT staffing to executive search, we offer comprehensive solutions
+        <p class="mt-4 text-lg text-[var(--text-muted)]">
+          Engage A2Z as an end-to-end partner or activate a specific pillar to extend your internal teams.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ServiceCard
-          title="IT Staffing"
-          description="Specialized IT talent placement for software development, cloud computing, cybersecurity, data science, DevOps, and all technology roles. We connect you with skilled professionals who drive innovation and digital transformation."
-          icon="computer"
-        />
-        <ServiceCard
-          title="Permanent Placement"
-          description="Long-term staffing solutions with comprehensive screening and matching. We ensure the perfect fit for both employers and candidates, focusing on cultural alignment and long-term success."
-          icon="briefcase"
-        />
-        <ServiceCard
-          title="Contract Staffing"
-          description="Flexible contract and temporary staffing solutions for projects. Scale your team up or down based on your project requirements without the overhead of permanent hires."
-          icon="document"
-        />
-        <ServiceCard
-          title="Executive Search"
-          description="C-level and senior executive placements. We help you find leaders who can transform your organization and drive strategic growth."
-          icon="target"
-        />
-        <ServiceCard
-          title="Recruitment Process Outsourcing"
-          description="End-to-end recruitment solutions. Let us handle your entire hiring process while you focus on your core business. We manage everything from sourcing to onboarding."
-          icon="rocket"
-        />
-        <ServiceCard
-          title="Talent Consulting"
-          description="Strategic talent consulting services. We help you build effective hiring strategies, optimize your workforce, and develop talent acquisition best practices."
-          icon="lightbulb"
-        />
-      </div>
-    </div>
-  </Section>
-
-  <!-- Industries Served -->
-  <Section background="secondary">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Industries We Serve
-        </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          We have experience across diverse industries
-        </p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {['Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Retail', 'Education', 'Consulting', 'E-commerce', 'Telecommunications', 'Energy', 'Automotive', 'Pharmaceuticals'].map((industry) => (
-          <Card class="text-center">
-            <div class="font-semibold text-gray-900 dark:text-white">{industry}</div>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        {[
+          {
+            icon: 'computer',
+            label: 'Digital engineering',
+            title: 'Technology & product delivery',
+            bullets: [
+              'Product engineering squads for web, mobile, SaaS, and platform builds',
+              'Core modernization, API-first integrations, and migration accelerators',
+              'DevSecOps, automation, and site reliability engineering as a managed service',
+            ],
+          },
+          {
+            icon: 'document',
+            label: 'BPO & CX',
+            title: 'Experience & back-office operations',
+            bullets: [
+              'Customer support pods covering voice, email, chat, and social channels',
+              'Finance, procurement, research, and knowledge process operations',
+              'KPI-led governance with quality assurance, analytics, and automation roadmaps',
+            ],
+          },
+          {
+            icon: 'users',
+            label: 'Talent & staffing',
+            title: 'Strategic workforce orchestration',
+            bullets: [
+              'Recruitment process outsourcing tailored for tech and operations roles',
+              'On-demand contract, gig, and BOT (build-operate-transfer) staffing models',
+              'Leadership, niche skill hiring, and talent advisory for scaling enterprises',
+            ],
+          },
+        ].map(({ icon, label, title, bullets }) => (
+          <Card class="h-full">
+            <div class="inline-flex items-center gap-3 rounded-xl bg-[rgba(29,78,216,0.08)] p-3 text-[var(--primary)]">
+              <Icon name={icon} class="h-7 w-7" />
+              <span class="text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">
+                {label}
+              </span>
+            </div>
+            <h3 class="mt-6 text-2xl font-semibold text-[var(--text-secondary)]">
+              {title}
+            </h3>
+            <ul class="mt-5 space-y-3 text-sm text-[var(--text-muted)]">
+              {bullets.map((item) => (
+                <li class="flex items-start gap-2">
+                  <Icon name="check" class="mt-0.5 h-4 w-4 text-[var(--secondary)]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </Card>
         ))}
       </div>
     </div>
   </Section>
 
-  <!-- Our Process -->
-  <Section>
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          How We Work
+  <!-- Detailed Services -->
+  <Section background="secondary">
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)] dark:text-white">
+          Service catalog tailored to your transformation milestones
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          A proven process that delivers results
+        <p class="mt-4 text-lg text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+          Modular offerings that can be consumed independently or orchestrated as a unified program.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <ServiceCard
+          title="Product engineering studios"
+          description="Cross-functional teams covering architects, engineers, QA, and UX to accelerate product roadmaps and platform modernization initiatives."
+          icon="rocket"
+        />
+        <ServiceCard
+          title="Cloud & platform reliability"
+          description="Hybrid SRE, observability, and automation squads ensuring uptime, performance, and secure deployments across multi-cloud landscapes."
+          icon="computer"
+        />
+        <ServiceCard
+          title="Analytics & automation pods"
+          description="Data engineering, reporting, RPA, and AI pilots embedded alongside operations to unlock insights and efficiency."
+          icon="lightbulb"
+        />
+        <ServiceCard
+          title="Customer experience operations"
+          description="Omnichannel CX desks with training, quality, and workforce management to elevate NPS, CSAT, and retention scores."
+          icon="users"
+        />
+        <ServiceCard
+          title="Finance & back-office BPM"
+          description="Record-to-report, procure-to-pay, order-to-cash, and knowledge services anchored to SLA and compliance frameworks."
+          icon="document"
+        />
+        <ServiceCard
+          title="Embedded RPO & staffing"
+          description="Dedicated recruiters, sourcers, and talent strategists delivering volume hiring, niche roles, and market intelligence."
+          icon="briefcase"
+        />
+      </div>
+    </div>
+  </Section>
+
+  <!-- Operating Models -->
+  <Section>
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <span class="inline-flex items-center gap-2 rounded-full bg-[rgba(14,165,233,0.12)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--secondary)]">
+          Engagement playbooks
+        </span>
+        <h2 class="mt-6 text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Flexible delivery models to meet your growth plans
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
         {[
-          { step: '1', title: 'Consultation', desc: 'We understand your requirements and company culture' },
-          { step: '2', title: 'Sourcing', desc: 'We tap into our network and use advanced sourcing techniques' },
-          { step: '3', title: 'Screening', desc: 'Thorough screening including technical and cultural fit assessment' },
-          { step: '4', title: 'Placement', desc: 'We facilitate interviews and help you make the right hire' },
-        ].map(({ step, title, desc }) => (
-          <div class="text-center">
-            <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{step}</span>
-            </div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{desc}</p>
-          </div>
+          {
+            title: 'Managed pod delivery',
+            desc: 'Outcome-based teams with shared SLAs, governance dashboards, and continuous improvement commitments.',
+          },
+          {
+            title: 'Embedded squads',
+            desc: 'Specialists working alongside your leads, adopting your toolchains while leveraging our accelerators.',
+          },
+          {
+            title: 'Build-operate-transfer',
+            desc: 'Co-create new delivery centers or functions with the option to transition ownership once maturity is achieved.',
+          },
+        ].map(({ title, desc }) => (
+          <Card class="h-full">
+            <h3 class="text-xl font-semibold text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="mt-4 text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+              {desc}
+            </p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Industries Served -->
+  <Section background="secondary">
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)] dark:text-white">
+          Industry expertise built on domain-rich teams
+        </h2>
+        <p class="mt-4 text-lg text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+          We support startups, scale-ups, and global enterprises across technology-driven and regulated verticals.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+        {[
+          'SaaS & product engineering',
+          'BFSI & fintech',
+          'Healthcare & healthtech',
+          'Retail & e-commerce',
+          'Logistics & supply chain',
+          'Telecom & media',
+          'Manufacturing & Industry 4.0',
+          'Energy & utilities',
+          'EdTech & learning',
+          'Global capability centers',
+          'Professional services',
+          'Gaming & entertainment',
+        ].map((industry) => (
+          <Card class="text-center">
+            <div class="font-semibold text-[var(--text-secondary)] dark:text-white">{industry}</div>
+          </Card>
         ))}
       </div>
     </div>
@@ -113,17 +205,21 @@ import Button from '../components/Button.astro';
 
   <!-- CTA -->
   <Section background="gradient">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-        Ready to Get Started?
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white">
+        Let’s architect the next phase of your IT, BPO, or staffing journey
       </h2>
       <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-        Let's discuss how we can help with your staffing needs
+        Share your priorities and we’ll bring the right mix of talent, process frameworks, and accelerators to deliver measurable value.
       </p>
-      <Button href="/contact" variant="primary" size="lg" class="bg-white text-indigo-600 hover:bg-gray-100">
-        Contact Us Today
-      </Button>
+      <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <Button href="/contact" variant="primary" size="lg" class="bg-white text-[var(--primary)] hover:bg-white/90">
+          Book a discovery call
+        </Button>
+        <Button href="/clients" variant="outline" size="lg" class="border-white text-white hover:bg-white/10">
+          View client programs
+        </Button>
+      </div>
     </div>
   </Section>
 </BaseLayout>
-

@@ -7,77 +7,78 @@ import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 ---
 
-<BaseLayout title="For Candidates - A2Z Staffing Solutions">
+<BaseLayout title="For Candidates — A2Z Digital Workforce">
   <Hero
-    title="Your Career Journey Starts Here"
-    subtitle="We connect talented professionals with amazing opportunities"
-    primaryCTA={{ text: "Browse Jobs", href: "/jobs" }}
-    secondaryCTA={{ text: "Submit Resume", href: "#apply" }}
+    title="Advance your career with the A2Z Digital Workforce network"
+    subtitle="Collaborate with high-growth product teams, customer experience pods, and innovation labs across industries—while we back you with coaching, upskilling, and long-term career design."
+    primaryCTA={{ text: "Browse opportunities", href: "/jobs" }}
+    secondaryCTA={{ text: "Submit your profile", href: "#apply" }}
     background="gradient"
   />
 
-  <!-- Why Choose Us -->
+  <!-- Why Join Us -->
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Why Choose Us
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          Why join our talent network
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          We're committed to your success
+        <p class="mt-4 text-lg text-[var(--text-muted)]">
+          We represent innovators building the future of tech, CX, and business operations—and we stay with you well beyond your first offer.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="target" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Perfect Match</h3>
-          <p class="text-gray-600 dark:text-gray-300">We understand your skills, goals, and preferences to find the perfect role for you.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="handshake" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Personal Support</h3>
-          <p class="text-gray-600 dark:text-gray-300">Our team provides personalized guidance throughout your job search journey.</p>
-        </Card>
-        <Card class="text-center">
-          <div class="mb-4 text-indigo-600 dark:text-indigo-400 flex justify-center">
-            <Icon name="chart" class="w-10 h-10" />
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Career Growth</h3>
-          <p class="text-gray-600 dark:text-gray-300">We help you find opportunities that align with your long-term career goals.</p>
-        </Card>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {[
+          {
+            icon: 'target',
+            title: 'Precise role matching',
+            desc: 'We align your strengths, ambitions, and preferred ways of working with programs where you’ll thrive.',
+          },
+          {
+            icon: 'handshake',
+            title: 'Career co-pilots',
+            desc: 'Dedicated talent partners coach you through interviews, negotiations, and continuous progression.',
+          },
+          {
+            icon: 'chart',
+            title: 'Future-ready growth',
+            desc: 'Gain access to learning sprints, community events, and cross-domain opportunities across our client network.',
+          },
+        ].map(({ icon, title, desc }) => (
+          <Card class="text-center">
+            <div class="mb-4 flex justify-center text-[var(--primary)]">
+              <Icon name={icon} class="w-10 h-10" />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">{desc}</p>
+          </Card>
+        ))}
       </div>
     </div>
   </Section>
 
-  <!-- How It Works -->
+  <!-- Candidate Journey -->
   <Section background="secondary">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          How It Works
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)] dark:text-white">
+          Your journey with A2Z
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Simple steps to your next opportunity
-        </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
         {[
-          { step: '1', title: 'Submit Resume', desc: 'Upload your resume and tell us about your preferences' },
-          { step: '2', title: 'We Review', desc: 'Our team reviews your profile and matches you with opportunities' },
-          { step: '3', title: 'Interview Prep', desc: 'We help you prepare for interviews and provide feedback' },
-          { step: '4', title: 'Get Placed', desc: 'Land your dream job and start your new career journey' },
+          { step: '01', title: 'Discover', desc: 'Share your profile, work preferences, and the kind of impact you want to create.' },
+          { step: '02', title: 'Curate', desc: 'We shortlist opportunities across product, CX, BPM, and leadership tracks aligned to your goals.' },
+          { step: '03', title: 'Elevate', desc: 'Interview coaching, skill refreshers, and mock sessions ensure you show up with confidence.' },
+          { step: '04', title: 'Thrive', desc: 'Join a community that supports onboarding, upskilling, and new challenges as you grow.' },
         ].map(({ step, title, desc }) => (
-          <div class="text-center">
-            <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{step}</span>
+          <Card class="h-full text-center">
+            <div class="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(29,78,216,0.12)] text-sm font-semibold uppercase tracking-[0.3em] text-[var(--primary)]">
+              {step}
             </div>
-            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{title}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{desc}</p>
-          </div>
+            <h3 class="text-lg font-semibold text-[var(--text-secondary)] dark:text-white">{title}</h3>
+            <p class="mt-3 text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">{desc}</p>
+          </Card>
         ))}
       </div>
     </div>
@@ -85,25 +86,25 @@ import Icon from '../components/Icon.astro';
 
   <!-- Benefits -->
   <Section>
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-          Benefits of Working With Us
+    <div class="container">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-[var(--text-secondary)]">
+          What you get as an A2Z consultant
         </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         {[
-          'Access to exclusive job opportunities',
-          'Free career counseling and guidance',
-          'Interview preparation and tips',
-          'Salary negotiation support',
-          'Long-term career planning',
-          'Regular updates on new openings',
+          'Access to exclusive product, CX, BPM, and leadership roles across industries',
+          'Dedicated talent partner and interview coaching for every opportunity',
+          'Compensation benchmarking and negotiation support with total rewards guidance',
+          'Upskilling pathways, mentorship circles, and certification sponsorships',
+          'Early visibility into contract-to-hire and global relocation programs',
+          'Community events, wellness initiatives, and referral bonuses',
         ].map((benefit) => (
           <Card>
-            <div class="flex items-center gap-3">
-              <Icon name="check" class="w-5 h-5 text-green-500" />
-              <p class="text-gray-700 dark:text-gray-300 font-medium">{benefit}</p>
+            <div class="flex items-start gap-3">
+              <Icon name="check" class="mt-1 h-4 w-4 text-[var(--secondary)]" />
+              <p class="text-sm text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">{benefit}</p>
             </div>
           </Card>
         ))}
@@ -113,23 +114,23 @@ import Icon from '../components/Icon.astro';
 
   <!-- Application Form -->
   <Section background="secondary" id="apply">
-    <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto">
+    <div class="container">
+      <div class="mx-auto max-w-2xl">
         <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Submit Your Resume
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-[var(--text-secondary)] dark:text-white">
+            Submit your profile
           </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300">
-            Let us know about you and we'll find the perfect opportunity
+          <p class="text-lg text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+            Tell us about your experience and ambitions—we’ll connect you with squads that match.
           </p>
         </div>
         <Card>
-            <form name="candidate-application" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" enctype="multipart/form-data" class="space-y-6">
+          <form name="candidate-application" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" enctype="multipart/form-data" class="space-y-6">
             <input type="hidden" name="form-name" value="candidate-application" />
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
-                <label for="firstName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                <label for="firstName" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   First Name *
                 </label>
                 <input
@@ -137,11 +138,11 @@ import Icon from '../components/Icon.astro';
                   id="firstName"
                   name="firstName"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                 />
               </div>
               <div>
-                <label for="lastName" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+                <label for="lastName" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                   Last Name *
                 </label>
                 <input
@@ -149,13 +150,13 @@ import Icon from '../components/Icon.astro';
                   id="lastName"
                   name="lastName"
                   required
-                  class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
                 />
               </div>
             </div>
 
             <div>
-              <label for="email" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="email" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Email Address *
               </label>
               <input
@@ -163,12 +164,12 @@ import Icon from '../components/Icon.astro';
                 id="email"
                 name="email"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="phone" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
+              <label for="phone" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
                 Phone Number *
               </label>
               <input
@@ -176,19 +177,19 @@ import Icon from '../components/Icon.astro';
                 id="phone"
                 name="phone"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="experience" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Years of Experience *
+              <label for="experience" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Years of experience *
               </label>
               <select
                 id="experience"
                 name="experience"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               >
                 <option value="">Select experience</option>
                 <option value="0-1">0-1 years</option>
@@ -199,22 +200,40 @@ import Icon from '../components/Icon.astro';
             </div>
 
             <div>
-              <label for="skills" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Key Skills *
+              <label for="skills" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Key skills *
               </label>
               <input
                 type="text"
                 id="skills"
                 name="skills"
                 required
-                placeholder="e.g., React, Node.js, Python, AWS"
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                placeholder="e.g., React, Data Engineering, Customer Success, Finance Ops"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="resume" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Upload Resume *
+              <label for="roleType" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Preferred engagement *
+              </label>
+              <select
+                id="roleType"
+                name="roleType"
+                required
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
+              >
+                <option value="">Select preference</option>
+                <option value="permanent">Permanent / full-time</option>
+                <option value="contract">Contract / project-based</option>
+                <option value="bot">Build-operate-transfer</option>
+                <option value="open">Open to any</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="resume" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Upload resume *
               </label>
               <input
                 type="file"
@@ -222,25 +241,25 @@ import Icon from '../components/Icon.astro';
                 name="resume"
                 accept=".pdf,.doc,.docx"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                class="w-full rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 file:mr-4 file:rounded-lg file:border-0 file:bg-[rgba(29,78,216,0.08)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[var(--primary)] hover:file:bg-[rgba(29,78,216,0.15)] dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               />
             </div>
 
             <div>
-              <label for="coverLetter" class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300">
-                Cover Letter (Optional)
+              <label for="coverLetter" class="block text-sm font-semibold mb-2 text-[var(--text-secondary)] dark:text-[var(--text-secondary)]">
+                Tell us more (optional)
               </label>
               <textarea
                 id="coverLetter"
                 name="coverLetter"
                 rows="4"
-                class="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
-                placeholder="Tell us why you're interested in working with us..."
+                placeholder="Share your ideal next role, preferred industries, location flexibility, or notice period."
+                class="w-full resize-none rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-[var(--text-secondary)] focus:border-[var(--secondary)] focus:outline-none focus:ring-2 focus:ring-[var(--secondary)]/60 dark:border-[var(--border)]/40 dark:bg-[var(--bg)] dark:text-white"
               ></textarea>
             </div>
 
             <Button type="submit" variant="primary" size="lg" class="w-full">
-              Submit Application
+              Submit application
             </Button>
           </form>
         </Card>
@@ -248,4 +267,3 @@ import Icon from '../components/Icon.astro';
     </div>
   </Section>
 </BaseLayout>
-
