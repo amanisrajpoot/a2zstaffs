@@ -36,8 +36,10 @@
   --shadow-xl: 0 40px 80px -25px rgba(14, 165, 233, 0.45);
 
   /* ===== SURFACE BLURS ===== */
-  --glass-light: rgba(255, 255, 255, 0.7);
+  --glass-light: rgba(255, 255, 255, 0.92);
   --glass-dark: rgba(15, 23, 42, 0.7);
+  --nav-item-hover: rgba(15, 23, 42, 0.05);
+  --nav-item-active: rgba(29, 78, 216, 0.12);
   
   /* ===== VIBRANT TECH GRADIENTS ===== */
   --gradient-primary: linear-gradient(120deg, #1d4ed8 0%, #0ea5e9 50%, #14b8a6 100%);
@@ -63,6 +65,8 @@
 
   --glass-light: rgba(15, 23, 42, 0.65);
   --glass-dark: rgba(2, 6, 23, 0.65);
+  --nav-item-hover: rgba(96, 165, 250, 0.18);
+  --nav-item-active: rgba(59, 130, 246, 0.22);
 
   --gradient-hero: radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.4) 0%, rgba(29, 78, 216, 0.75) 60%, rgba(15, 23, 42, 0.95) 100%);
 }
