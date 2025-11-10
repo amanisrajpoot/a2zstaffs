@@ -7,12 +7,12 @@ import Icon from '../components/Icon.astro';
 import Button from '../components/Button.astro';
 ---
 
-<BaseLayout title="About — A2Z Digital Workforce">
-  <Hero
-    title="The people and principles behind A2Z Digital Workforce"
-    subtitle="We blend technology, BPM, and talent expertise into one operating model—helping enterprises scale faster while people grow in meaningful careers."
-    background="gradient"
-  />
+  <BaseLayout title="About — A2Z Digital Workforce">
+    <Hero
+      title="The people and principles behind A2Z Digital Workforce"
+      subtitle="We blend technology services, operations expertise, and talent programs into one operating model—helping enterprises scale faster while people grow in meaningful careers."
+      background="default"
+    />
 
   <!-- Our Story -->
   <Section>
@@ -25,9 +25,9 @@ import Button from '../components/Button.astro';
           <p>
             Established in 2007, A2Z began as a specialist staffing agency helping technology companies hire faster. As our clients expanded, so did their need for integrated delivery partners who could stand up engineering pods, customer experience desks, and niche talent programs under one roof.
           </p>
-          <p>
-            Today, A2Z Digital Workforce operates as a full-stack partner spanning digital product engineering, BPM and CX operations, and strategic staffing. Our teams work from delivery hubs across India—backed by playbooks, accelerators, and governance frameworks that keep outcomes measurable.
-          </p>
+            <p>
+              Today, A2Z Digital Workforce operates as a full-stack partner spanning digital product engineering, experience operations, and strategic staffing. Our teams work from delivery hubs across India—backed by playbooks, accelerators, and governance frameworks that keep outcomes measurable.
+            </p>
           <p>
             We believe that sustainable growth happens when business goals, human potential, and technology innovation move in sync. Every engagement we take on is rooted in that belief.
           </p>
@@ -40,15 +40,15 @@ import Button from '../components/Button.astro';
   <Section background="secondary">
     <div class="container">
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <Card>
-          <div class="mb-4 text-[var(--primary)]">
-            <Icon name="target" class="w-10 h-10" />
-          </div>
-          <h3 class="text-2xl font-semibold mb-4 text-[var(--text-secondary)] dark:text-white">Our Mission</h3>
-          <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
-            To engineer integrated IT, BPO, and staffing solutions that accelerate our clients’ strategies while creating purposeful growth paths for every professional we engage.
-          </p>
-        </Card>
+          <Card>
+            <div class="mb-4 text-[var(--primary)]">
+              <Icon name="target" class="w-10 h-10" />
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-[var(--text-secondary)] dark:text-white">Our Mission</h3>
+            <p class="text-[var(--text-muted)] dark:text-[var(--text-secondary)]/80">
+              To engineer integrated services, managed operations, and talent solutions that accelerate our clients’ strategies while creating purposeful growth paths for every professional we engage.
+            </p>
+          </Card>
         <Card>
           <div class="mb-4 text-[var(--primary)]">
             <Icon name="globe" class="w-10 h-10" />
@@ -105,7 +105,7 @@ import Button from '../components/Button.astro';
           {
             icon: 'bolt',
             title: 'Digital-first DNA',
-            desc: 'Technology, BPM, and staffing experts collaborate from day one—ensuring solutions are agile, automated, and insight-driven.',
+            desc: 'Technology, operations, and staffing experts collaborate from day one—ensuring solutions are agile, automated, and insight-driven.',
           },
           {
             icon: 'chart',
@@ -167,7 +167,7 @@ import Button from '../components/Button.astro';
       <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
         We’re ready to share more about our playbooks, centers of excellence, and success stories tailored to your industry.
       </p>
-      <Button href="/contact" variant="primary" size="lg" class="bg-white text-[var(--primary)] hover:bg-white/90">
+        <Button href="/contact" variant="contrast" size="lg">
         Schedule a conversation
       </Button>
     </div>

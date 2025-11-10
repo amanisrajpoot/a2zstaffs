@@ -17,7 +17,7 @@ import Button from './Button.astro';
               Digital Workforce
             </span>
             <span class="text-[0.75rem] lg:text-xs uppercase tracking-[0.35em] text-[var(--text-muted)] group-hover:text-[var(--primary)] transition-colors">
-              IT • BPO • Staffing
+              Advisory • Talent • Platforms
             </span>
           </div>
         </a>
@@ -25,26 +25,17 @@ import Button from './Button.astro';
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center gap-1">
           <nav class="flex items-center gap-1 mr-4">
-            <a href="/" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Home
-            </a>
             <a href="/about" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
               About
             </a>
             <a href="/services" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Services
-            </a>
-            <a href="/jobs" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Jobs
-            </a>
-            <a href="/candidates" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Candidates
+              Solutions
             </a>
             <a href="/clients" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Clients
+              For Clients
             </a>
-            <a href="/contact" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
-              Contact
+            <a href="/candidates" class="px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] hover:text-[var(--primary)] transition-all duration-200">
+              Talent Network
             </a>
           </nav>
           <ThemeToggle />
@@ -75,23 +66,17 @@ import Button from './Button.astro';
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-[var(--border)]/60 pb-4">
       <nav class="flex flex-col gap-1 pt-4">
-        <a href="/" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Home
-        </a>
         <a href="/about" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
           About
         </a>
-        <a href="/services" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Services
+        <a href="/clients" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
+          For Clients
         </a>
-        <a href="/jobs" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Jobs
+        <a href="/services" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
+          Solutions
         </a>
         <a href="/candidates" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Candidates
-        </a>
-        <a href="/clients" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
-          Clients
+          Talent Network
         </a>
         <a href="/contact" class="px-4 py-3 rounded-xl text-base font-medium text-[var(--text-muted)] hover:bg-[rgba(29,78,216,0.08)] transition-colors">
           Contact
@@ -107,7 +92,7 @@ import Button from './Button.astro';
 </header>
 
 <script>
-  (function() {
+  (function () {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.getElementById('menu-icon');
@@ -115,7 +100,6 @@ import Button from './Button.astro';
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
         mobileMenu.classList.toggle('hidden');
         menuIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');

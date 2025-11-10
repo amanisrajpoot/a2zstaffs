@@ -66,12 +66,12 @@ import Icon from '../components/Icon.astro';
         </h2>
       </div>
       <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
-        {[
-          { step: '01', title: 'Discover', desc: 'Share your profile, work preferences, and the kind of impact you want to create.' },
-          { step: '02', title: 'Curate', desc: 'We shortlist opportunities across product, CX, BPM, and leadership tracks aligned to your goals.' },
-          { step: '03', title: 'Elevate', desc: 'Interview coaching, skill refreshers, and mock sessions ensure you show up with confidence.' },
-          { step: '04', title: 'Thrive', desc: 'Join a community that supports onboarding, upskilling, and new challenges as you grow.' },
-        ].map(({ step, title, desc }) => (
+          {[
+            { step: '01', title: 'Discover', desc: 'Share your profile, work preferences, and the kind of impact you want to create.' },
+            { step: '02', title: 'Curate', desc: 'We shortlist opportunities across product, experience, and leadership tracks aligned to your goals.' },
+            { step: '03', title: 'Elevate', desc: 'Interview coaching, skill refreshers, and mock sessions ensure you show up with confidence.' },
+            { step: '04', title: 'Thrive', desc: 'Join a community that supports onboarding, upskilling, and new challenges as you grow.' },
+          ].map(({ step, title, desc }) => (
           <Card class="h-full text-center">
             <div class="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[rgba(29,78,216,0.12)] text-sm font-semibold uppercase tracking-[0.3em] text-[var(--primary)]">
               {step}
@@ -93,14 +93,14 @@ import Icon from '../components/Icon.astro';
         </h2>
       </div>
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {[
-          'Access to exclusive product, CX, BPM, and leadership roles across industries',
-          'Dedicated talent partner and interview coaching for every opportunity',
-          'Compensation benchmarking and negotiation support with total rewards guidance',
-          'Upskilling pathways, mentorship circles, and certification sponsorships',
-          'Early visibility into contract-to-hire and global relocation programs',
-          'Community events, wellness initiatives, and referral bonuses',
-        ].map((benefit) => (
+          {[
+            'Access to exclusive product, experience, and leadership roles across industries',
+            'Dedicated talent partner and interview coaching for every opportunity',
+            'Compensation benchmarking and negotiation support with total rewards guidance',
+            'Upskilling pathways, mentorship circles, and certification sponsorships',
+            'Early visibility into contract-to-hire and global relocation programs',
+            'Community events, wellness initiatives, and referral bonuses',
+          ].map((benefit) => (
           <Card>
             <div class="flex items-start gap-3">
               <Icon name="check" class="mt-1 h-4 w-4 text-[var(--secondary)]" />
